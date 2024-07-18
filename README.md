@@ -19,25 +19,28 @@ VantaInteractive/Social is a fork of [Mastodon Glitch Edition](https://github.co
 
 ## Features
 As compared to 'vanilla' Mastodon, with this repo and the original repo's commit hashes:
+#### From Mastodon upstream
+- ADDED: [Change design of confirmation modals in web UI #30884 ](https://github.com/mastodon/mastodon/pull/30884)
+- ADDED: [Replace more font-awesome icons in views/settings #30963 ](https://github.com/mastodon/mastodon/pull/30963)
+- ADDED: [Replace more font-awesome icons in navigation sidebar area #30974 ](https://github.com/mastodon/mastodon/pull/30974)
+- ADDED (was merged to Glitch Edition while editing the README.md for the first time): Grouped Notifications UI
+
 #### From Mastodon Glitch Edition
-```
-+Media Improvements
-+ Formatted toots
-+ Highlighting of misleading links
-+ The option to hide your follower count
-- App settings modal (integrated into Mastodon settings UI page)
-+ Collapsible toots
-+ Colored toot visibility icon
-+ Local-only tweets
-+ Threaded mode
-+ CSS data status attributes
-+ Glitch flavours & skins
-- Doodle
-```
+- ADDED: Media Improvements
+- ADDED: Formatted toots
+- ADDED: Highlighting of misleading links
+- ADDED: The option to hide your follower count
+- REMOVED: App settings modal (integrated into Mastodon settings UI page)
+- ADDED: Collapsible toots
+- ADDED: Colored toot visibility icon
+- ADDED: Local-only tweets
+- ADDED: Threaded mode
+- ADDED: CSS data status attributes
+- ADDED: Glitch flavours & skins
+- REMOVED: Doodle
+
 #### From kiyo.social
-```
-+ Jit.si integration
-```
+- ADDED: Jit.si integration
 
 ## Deployment
 
