@@ -404,7 +404,7 @@ They will now automatically start at boot.
 `RAILS_ENV=production DB_POOL=25 MALLOC_ARENA_MAX=2 LD_PRELOAD=libjemalloc.so /home/{user}/.rbenv/shims/bundle exec sidekiq -c 25`
 
 ###### mastodon-streaming
-`NODE_ENV=production "PORT=%i /usr/bin/node /home/{user}/live/streaming`
+`NODE_ENV=production PORT=%i /usr/bin/node /home/{user}/live/streaming`
 
 ###### mastodon-web
 `RAILS_ENV=production PORT=3000 LD_PRELOAD=libjemalloc.so /home/mastodon/.rbenv/shims/bundle exec puma -C config/puma.rb`
