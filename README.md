@@ -20,9 +20,10 @@ VantaInteractive/Social is a fork of [Mastodon Glitch Edition](https://github.co
 ## Features
 As compared to 'vanilla' Mastodon, with this repo and the original repo's commit hashes:
 #### From Mastodon upstream
-- ADDED: [Change design of confirmation modals in web UI #30884 ](https://github.com/mastodon/mastodon/pull/30884)
-- ADDED: [Replace more font-awesome icons in views/settings #30963 ](https://github.com/mastodon/mastodon/pull/30963)
-- ADDED: [Replace more font-awesome icons in navigation sidebar area #30974 ](https://github.com/mastodon/mastodon/pull/30974)
+- ADDED: [Change design of confirmation modals in web UI #30884](https://github.com/mastodon/mastodon/pull/30884)
+- ADDED: [Replace more font-awesome icons in views/settings #30963](https://github.com/mastodon/mastodon/pull/30963)
+- ADDED: [Replace more font-awesome icons in navigation sidebar area #30974](https://github.com/mastodon/mastodon/pull/30974)
+- ADDED: [Add missing Appeals link under Moderation in navigiation #31071](https://github.com/mastodon/mastodon/pull/31071)
 - ADDED (was merged to Glitch Edition while editing the README.md for the first time): Grouped Notifications UI
 
 #### From Mastodon Glitch Edition
@@ -41,6 +42,9 @@ As compared to 'vanilla' Mastodon, with this repo and the original repo's commit
 
 #### From kiyo.social
 - ADDED: Jit.si integration
+
+#### VantaInteractive/Social additions
+- ADDED: More sharp Material Symbols icons changes in the interface, for a more unified and coherent design that works well with Obsidian Design
 
 ## Deployment
 
