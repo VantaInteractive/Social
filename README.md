@@ -1,5 +1,5 @@
 <h1><picture>
-  <img alt="Mastodon" src="./public/assets/VantaSocial_Banner.png?raw=true" width="100%">
+  <img alt="Mastodon" src="./lib/assets/VantaSocial_Banner.png?raw=true" width="100%">
 </picture></h1>
 
 ## What is Vanta Interactive Social?
