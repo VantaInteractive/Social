@@ -1,21 +1,21 @@
-# Vanta Interactive Social
+<h1><picture>
+  <img alt="Mastodon" src="./public/assets/VantaSocial_Banner.png?raw=true" width="100%">
+</picture></h1>
 
-## What is social.vantainteractive.com?
+## What is Vanta Interactive Social?
 VantaInteractive/Social is a fork of [Mastodon Glitch Edition](https://github.com/glitch-soc/mastodon/), with some [upstream](https://github.com/mastodon/mastodon) PRs merged, some features from the archived [koyu.space](https://github.com/koyuspace/mastodon), and our own changes on top, in order for them to be used on the social.vantainteractive.com subdomain. Vanta Interactive Social is a server instance that doesn't accept new users, as it's meant to be exclusively used by Vanta Interactive members.
 
 ## Navigation
 
 - [Mastodon project homepage](https://joinmastodon.org)
 - [Mastodon Glitch Edition project homepage](https://glitch-soc.github.io/docs/)
-- [Support the Mastodon development via Patreon][patreon]
+- [Support the Mastodon development via Patreon](https://www.patreon.com/mastodon)
 - [View Mastodon sponsors](https://joinmastodon.org/sponsors)
 - [Mastodon Blog](https://blog.joinmastodon.org)
 - [Mastodon Documentation](https://docs.joinmastodon.org)
 - [Mastodon Roadmap](https://joinmastodon.org/roadmap)
 - [Browse Mastodon servers](https://joinmastodon.org/communities)
 - [Browse Mastodon apps](https://joinmastodon.org/apps)
-
-[patreon]: https://www.patreon.com/mastodon
 
 ## Features
 As compared to 'vanilla' Mastodon, with this repo and the original repo's commit hashes:
