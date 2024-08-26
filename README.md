@@ -1,6 +1,8 @@
-# Vanta Interactive Social
+<h1><picture>
+  <img alt="Mastodon" src="./public/assets/VantaSocial_Banner.png?raw=true" width="100%">
+</picture></h1>
 
-## What is social.vantainteractive.com?
+## What is Vanta Social?
 VantaInteractive/Social is a fork of [Mastodon Glitch Edition](https://github.com/glitch-soc/mastodon/), with some [upstream](https://github.com/mastodon/mastodon) PRs merged, some features from the archived [koyu.space](https://github.com/koyuspace/mastodon), and our own changes on top, in order for them to be used on the social.vantainteractive.com subdomain. Vanta Interactive Social is a server instance that doesn't accept new users, as it's meant to be exclusively used by Vanta Interactive members.
 
 ## Navigation
