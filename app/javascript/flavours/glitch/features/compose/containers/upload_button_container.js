@@ -31,6 +31,11 @@ const mapDispatchToProps = dispatch => ({
       modalProps: { noEsc: true, noClose: true },
     }));
   },
+
+  onEmbedJitsi() {
+    var x = Math.floor((Math.random() * 10000000000000000) + 1);
+    dispatch(changeCompose("https://meet.jit.si//"+x));
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UploadButton);
