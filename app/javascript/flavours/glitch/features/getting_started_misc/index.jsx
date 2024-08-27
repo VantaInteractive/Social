@@ -8,6 +8,8 @@ import { connect } from 'react-redux';
 import BlockIcon from '@/material-icons/400-24px/block.svg?react';
 import InfoIcon from '@/material-icons/400-24px/info.svg?react';
 import MoreHorizIcon from '@/material-icons/400-24px/more_horiz.svg?react';
+import NorthEastIcon from '@/material-icons/400-24px/north_east.svg?react';
+import PersonCheckIcon from '@/material-icons/400-24px/person_check.svg?react';
 import PushPinIcon from '@/material-icons/400-24px/push_pin.svg?react';
 import StarIcon from '@/material-icons/400-24px/star-fill.svg?react';
 import VolumeOffIcon from '@/material-icons/400-24px/volume_off.svg?react';
@@ -25,6 +27,9 @@ const messages = defineMessages({
   mutes: { id: 'navigation_bar.mutes', defaultMessage: 'Muted users' },
   pins: { id: 'navigation_bar.pins', defaultMessage: 'Pinned posts' },
   keyboard_shortcuts: { id: 'navigation_bar.keyboard_shortcuts', defaultMessage: 'Keyboard shortcuts' },
+  featured_users: { id: 'navigation_bar.featured_users', defaultMessage: 'Featured users' },
+  vantawebsite: { id: 'navigation_bar.vantawebsitelink', defaultMessage: 'Vanta Interactive website' },
+  vantadocs: { id: 'navigation_bar.vantawebstedocs', defaultMessage: 'Vanta Interactive documentation' }
 });
 
 class GettingStartedMisc extends ImmutablePureComponent {
@@ -49,6 +54,8 @@ class GettingStartedMisc extends ImmutablePureComponent {
           {signedIn && (<ColumnLink key='blocks' icon='ban' iconComponent={BlockIcon} text={intl.formatMessage(messages.blocks)} to='/blocks' />)}
           {signedIn && (<ColumnLink key='domain_blocks' icon='minus-circle' iconComponent={BlockIcon} text={intl.formatMessage(messages.domain_blocks)} to='/domain_blocks' />)}
           <ColumnLink key='shortcuts' icon='question' iconComponent={InfoIcon} text={intl.formatMessage(messages.keyboard_shortcuts)} to='/keyboard-shortcuts' />
+          <ColumnLink icon='arrow-up' iconComponent={NorthEastIcon} text={intl.formatMessage(messages.vantawebsite)} to='https://vantainteractive.com/' />
+          <ColumnLink icon='arrow-up' iconComponent={NorthEastIcon} text={foramtMessage(messages.vantadocs)} to='https://docs.vantainteractive.com/' />
         </div>
       </Column>
     );
