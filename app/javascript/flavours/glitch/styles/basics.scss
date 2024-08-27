@@ -6,6 +6,8 @@
   @return '%23' + unquote($color);
 }
 
+h1, h2, h3, h4 {font-family: 'Space Grotesk' !important;}
+
 body {
   font-family: 'Space Mono', 'Space Grotesk', sans-serif;
   background: var(--background-color);

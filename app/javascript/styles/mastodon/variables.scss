@@ -1,26 +1,48 @@
-// Commonly used web colors
-$black: #000000; // Black
-$white: #ffffff; // White
-$red-600: #b7253d !default; // Deep Carmine
-$red-500: #df405a !default; // Cerise
-$blurple-600: #563acc; // Iris
-$blurple-500: #6364ff; // Brand purple
-$blurple-400: #7477fd; // Medium slate blue
-$blurple-300: #858afa; // Faded Blue
-$grey-600: hsl(240deg, 8%, 33%); // Trout
-$grey-100: hsl(240deg, 51%, 90%); // Topaz
+// Obsidian Design
+$black: #000000;
+$white: #ffffff;
+$darkgray: #3b3b3b;
+$lightgray: #c4c4c4;
+$transparent: #00000000;
+$brand: #a0a0a0;
+$magenta: #fcb5ff;
+$vantagray: #242424;
+$warning: #f8ff9c;
+$danger: #ed333b;
+$caution: #ff7800;
+$success: #7bff00;
 
-$success-green: #79bd9a !default; // Padua
-$error-red: $red-500 !default; // Cerise
-$warning-red: #ff5050 !default; // Sunset Orange
-$gold-star: #ca8f04 !default; // Dark Goldenrod
+$aedis: #ffc525;
+$prisonia: #ff9900;
+$jumpgame: #141922;
+$project-mountain: #E9DCDC;
+$project-odyssey: #FF7777;
+$project-hangar: #FFA674;
+$project-eiffel: #4fdce0;
+$project-vidal: #e5ee63;
+$project-sunset: #e25b11;
+
+// Commonly used web colors
+$red-600: $danger !default;
+$red-500: lighten($red-600, 25%) !default;
+$blurple-600: darken(#f8ff9c, 25%);
+$blurple-500: $warning;
+$blurple-400: lighten(#f8ff9c, 25%);
+$blurple-300: lighten(#f8ff9c, 50%);
+$grey-600: hsl(0, 0%, 23%);
+$grey-100: hsl(0, 0%, 77%);
+
+$success-green: $success !default;
+$error-red: $red-500 !default;
+$warning-red: $danger !default;
+$gold-star: $warning !default;
 
 $red-bookmark: $warning-red;
 
 // Values from the classic Mastodon UI
-$classic-base-color: hsl(240deg, 16%, 19%);
-$classic-primary-color: hsl(240deg, 29%, 70%);
-$classic-secondary-color: hsl(255deg, 25%, 88%);
+$classic-base-color: $darkgray;
+$classic-primary-color: $lightgray;
+$classic-secondary-color: $brand;
 $classic-highlight-color: $blurple-500;
 
 // Variables for defaults in UI
@@ -104,7 +126,7 @@ $font-monospace: 'mastodon-font-monospace' !default;
   --modal-border-color: #{lighten($ui-base-color, 4%)};
   --background-border-color: #{lighten($ui-base-color, 4%)};
   --background-filter: blur(10px) saturate(180%) contrast(75%) brightness(70%);
-  --background-color: #{darken($ui-base-color, 8%)};
+  --background-color: #242424;
   --background-color-tint: #{rgba(darken($ui-base-color, 8%), 0.9)};
   --surface-background-color: #{darken($ui-base-color, 4%)};
   --surface-variant-background-color: #{$ui-base-color};

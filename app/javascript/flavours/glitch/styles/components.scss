@@ -51,7 +51,7 @@
   border: 10px none;
   border-radius: 0px;
   box-sizing: border-box;
-  color: $ui-button-color;
+  color: $black;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -777,6 +777,8 @@ body > [data-popper-placement] {
     gap: 5px; // glitch: handle secondary post privacy
     align-items: stretch; // glitch: handle secondary post privacy
 
+    .button {color: $black !important;}
+
     .button.secondary-post-button {
       flex: 0 1 auto;
       padding-top: 0;
@@ -828,7 +830,7 @@ body > [data-popper-placement] {
 
       &.active {
         background: $ui-highlight-color;
-        color: $primary-text-color;
+        color: $black;
       }
     }
   }
@@ -1001,6 +1003,7 @@ body > [data-popper-placement] {
 }
 
 .emojione {
+  transition: all 0.35s ease-in-out;
   font-size: inherit;
   vertical-align: middle;
   object-fit: contain;
@@ -1011,6 +1014,12 @@ body > [data-popper-placement] {
   img {
     width: auto;
   }
+}
+
+.emojione:hover {
+  width: 50px !important;
+  height: 50px !important;
+    transition: all 0.35s ease-in-out !important;
 }
 
 .status__content--with-action {
@@ -1546,6 +1555,8 @@ body > [data-popper-placement] {
   }
 }
 
+.status.muted {opacity: 0.5}
+
 .status__wrapper.collapsed {
   .status {
     background-position: center;
@@ -2059,7 +2070,7 @@ body > [data-popper-placement] {
           width: 40px;
           height: 40px;
           background: $ui-highlight-color;
-          color: $white;
+          color: $black;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -2525,6 +2536,7 @@ a.account__display-name {
 }
 
 .display-name__html {
+  display: block;
   font-weight: 500;
 }
 
@@ -3969,6 +3981,10 @@ $ui-header-logo-wordmark-width: 99px;
 }
 
 .getting-started {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
   color: $dark-text-color;
   overflow: auto;
   border: 1px solid var(--background-border-color);
@@ -5656,7 +5672,7 @@ a.status-card {
   align-items: center;
   gap: 12px;
   border-radius: 0px;
-  color: $primary-text-color;
+  color: $black;
 
   &:hover,
   &:active {
@@ -5666,13 +5682,13 @@ a.status-card {
   &:focus,
   &.active {
     background: $ui-highlight-color;
-    color: $primary-text-color;
+    color: $black;
     outline: 0;
 
     .privacy-dropdown__option__content,
     .privacy-dropdown__option__content strong,
     .privacy-dropdown__option__additional {
-      color: $primary-text-color;
+      color: $black;
     }
   }
 
@@ -10180,7 +10196,7 @@ noscript {
     }
 
     strong {
-      font-weight: 500;
+      font-weight: 600;
     }
 
     a {
@@ -11121,6 +11137,7 @@ noscript {
     flex: 1 1 auto;
     padding: 5px 12px;
     border-radius: 0px;
+    color: $black;
   }
 }
 
