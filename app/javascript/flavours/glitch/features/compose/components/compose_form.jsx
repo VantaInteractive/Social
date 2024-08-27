@@ -32,6 +32,7 @@ import { PollForm } from "./poll_form";
 import { ReplyIndicator } from './reply_indicator';
 import { SecondaryPrivacyButton } from './secondary_privacy_button';
 import { ThreadModeButton } from './thread_mode_button';
+import { JitsiMeetingButton } from './jitsi_meeting_button';
 import { UploadForm } from './upload_form';
 import { Warning } from './warning';
 
@@ -318,6 +319,7 @@ class ComposeForm extends ImmutablePureComponent {
                 <EmojiPickerDropdown onPickEmoji={this.handleEmojiPick} />
                 <FederationButton />
                 <ThreadModeButton />
+                <JitsiMeetingButton />
                 <CharacterCounter max={maxChars} text={this.getFulltextForCharacterCounting()} />
               </div>
 
