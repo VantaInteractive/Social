@@ -1,6 +1,6 @@
 .activity-stream {
   box-shadow: 0 0 15px rgba($base-shadow-color, 0.2);
-  border-radius: 4px;
+  border-radius: 0px;
   overflow: hidden;
   margin-bottom: 10px;
 
@@ -39,7 +39,7 @@
       .status,
       .load-more {
         border-bottom: 0;
-        border-radius: 0 0 4px 4px;
+        border-radius: 0px;
       }
     }
 
@@ -47,14 +47,14 @@
       .detailed-status,
       .status,
       .load-more {
-        border-radius: 4px 4px 0 0;
+        border-radius: 0px;
       }
 
       &:last-child {
         .detailed-status,
         .status,
         .load-more {
-          border-radius: 4px;
+          border-radius: 0px;
         }
       }
     }

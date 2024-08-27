@@ -2,17 +2,17 @@
 # important settings can be changed from the admin interface.
 
 defaults: &defaults
-  site_title: 'Mastodon Glitch Edition'
+  site_title: 'Vanta Social'
   site_short_description: ''
   site_description: ''
   site_extended_description: ''
   site_terms: ''
-  site_contact_username: ''
-  site_contact_email: ''
+  site_contact_username: 'admin'
+  site_contact_email: 'contact.social@vantainteractive.com'
   registrations_mode: 'none'
   profile_directory: true
-  closed_registrations_message: ''
-  timeline_preview: false
+  closed_registrations_message: 'Sign-ups are closed for the Vanta Social instance. Try signing up to a different instance instead.'
+  timeline_preview: true
   show_staff_badge: true
   preview_sensitive_media: false
   noindex: false
@@ -39,8 +39,8 @@ defaults: &defaults
   show_reblogs_in_public_timelines: false
   show_replies_in_public_timelines: false
   default_content_type: 'text/plain'
-  show_domain_blocks: 'disabled'
-  show_domain_blocks_rationale: 'disabled'
+  show_domain_blocks: 'enabled'
+  show_domain_blocks_rationale: 'enabled'
   outgoing_spoilers: ''
   require_invite_text: false
   backups_retention_period: 7

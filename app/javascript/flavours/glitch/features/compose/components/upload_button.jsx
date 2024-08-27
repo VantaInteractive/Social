@@ -9,14 +9,12 @@ import { connect } from 'react-redux';
 import PhotoLibraryIcon from '@/material-icons/400-20px/photo_library.svg?react';
 import BrushIcon from '@/material-icons/400-24px/brush.svg?react';
 import UploadFileIcon from '@/material-icons/400-24px/upload_file.svg?react';
-import MeetingRoomIcon from '@/material-icons/400-24px/meeting_room.svg?react';
 
 import { DropdownIconButton } from './dropdown_icon_button';
 
 const messages = defineMessages({
   upload: { id: 'upload_button.label', defaultMessage: 'Add images, a video or an audio file' },
   doodle: { id: 'compose.attach.doodle', defaultMessage: 'Draw something' },
-  jitsi: {id: 'compose.attach.jitsi', defaultMessage: 'Start a meeting'},
 });
 
 const makeMapStateToProps = () => {
@@ -33,7 +31,6 @@ class UploadButton extends ImmutablePureComponent {
     disabled: PropTypes.bool,
     onSelectFile: PropTypes.func.isRequired,
     onDoodleOpen: PropTypes.func.isRequired,
-    onEmbedJitsi: PropTypes.func.isRequired,
     style: PropTypes.object,
     resetFileKey: PropTypes.number,
     acceptContentTypes: ImmutablePropTypes.listOf(PropTypes.string).isRequired,
@@ -51,8 +48,6 @@ class UploadButton extends ImmutablePureComponent {
       this.fileElement.click();
     } else {
       this.props.onDoodleOpen();
-    } else {
-      this.props.onEmbedJitsi();
     }
   };
 
@@ -77,12 +72,6 @@ class UploadButton extends ImmutablePureComponent {
         iconComponent: BrushIcon,
         value: 'doodle',
         text: intl.formatMessage(messages.doodle),
-      },
-      {
-        icon: 'meeting-room',
-        iconComponent: MeetingRoomIcon,
-        value: 'jitsi',
-        text: intl.formatMessage(messages.jitsi),
       },
     ];
 

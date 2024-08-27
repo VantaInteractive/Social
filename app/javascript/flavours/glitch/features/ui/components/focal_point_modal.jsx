@@ -50,7 +50,7 @@ const mapStateToProps = (state, { id }) => ({
   focusY: state.getIn(['compose', 'media_modal', 'focusY']),
   dirty: state.getIn(['compose', 'media_modal', 'dirty']),
   is_changing_upload: state.getIn(['compose', 'is_changing_upload']),
-  maxChars: state.getIn(['server', 'server', 'configuration', 'media_attachments', 'max_characters'], 1_500),
+  maxChars: state.getIn(['server', 'server', 'configuration', 'media_attachments', 'max_characters'], 50000),
 });
 
 const mapDispatchToProps = (dispatch, { id }) => ({

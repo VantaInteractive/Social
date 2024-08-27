@@ -1,0 +1,1 @@
+RAILS_ENV=production PORT=3000 /home/alextec/.rbenv/shims/bundle exec puma -C config/puma.rb & RAILS_ENV=production DB_POOL=25 LD_PRELOAD=libjemalloc.so /home/alextec/.rbenv/shims/bundle exec sidekiq -c 25 & NODE_ENV=production PORT=4000 node ./streaming
