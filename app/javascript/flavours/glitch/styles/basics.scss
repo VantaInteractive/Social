@@ -9,7 +9,7 @@
 h1, h2, h3, h4 {font-family: 'Space Grotesk' !important;}
 
 body {
-  font-family: 'Space Mono', 'Space Grotesk', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   background: var(--background-color);
   font-size: 13px;
   line-height: 18px;
@@ -293,5 +293,13 @@ div,
 article {
   .__ns__pop2top {
     z-index: unset !important;
+  }
+}
+
+// Variable column width
+@media screen and (min-width: 650px) {
+  .column, 
+  .drawer {
+      flex: auto !important;
   }
 }

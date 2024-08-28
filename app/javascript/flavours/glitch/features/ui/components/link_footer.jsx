@@ -70,7 +70,7 @@ class LinkFooter extends PureComponent {
             </>
           )}
           {DividingCircle}
-          <Link to='/privacy-policy' target='_blank'><FormattedMessage id='footer.privacy_policy' defaultMessage='Legal' /></Link>
+          <a href='https://legal.vantainteractive.com' target='_blank'><FormattedMessage id='footer.privacy_policy' defaultMessage='Legal' /></a>
         </p>
 
         <p>

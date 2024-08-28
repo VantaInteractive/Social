@@ -70,6 +70,10 @@ export function KeyboardShortcuts () {
   return import(/* webpackChunkName: "flavours/glitch/async/keyboard_shortcuts" */'../../keyboard_shortcuts');
 }
 
+export function MarkdownGuide () {
+  return import(/* webpackChunkName: "flavours/glitch/async/markdown_guide" */'../../markdown_guide');
+}
+
 export function PinnedStatuses () {
   return import(/* webpackChunkName: "flavours/glitch/async/pinned_statuses" */'../../pinned_statuses');
 }

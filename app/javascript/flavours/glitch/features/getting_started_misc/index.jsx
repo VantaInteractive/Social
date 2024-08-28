@@ -28,9 +28,8 @@ const messages = defineMessages({
   mutes: { id: 'navigation_bar.mutes', defaultMessage: 'Muted users' },
   pins: { id: 'navigation_bar.pins', defaultMessage: 'Pinned posts' },
   keyboard_shortcuts: { id: 'navigation_bar.keyboard_shortcuts', defaultMessage: 'Keyboard shortcuts' },
+  markdown_guide: { id: 'navigation_bar.markdown_guide', defaultMessage: 'Markdown guide' },
   featured_users: { id: 'navigation_bar.featured_users', defaultMessage: 'Featured users' },
-  vantawebsite: { id: 'navigation_bar.vantawebsitelink', defaultMessage: 'Vanta Interactive website' },
-  vantadocs: { id: 'navigation_bar.vantawebstedocs', defaultMessage: 'Vanta Interactive documentation' }
 });
 
 class GettingStartedMisc extends ImmutablePureComponent {
@@ -62,8 +61,7 @@ class GettingStartedMisc extends ImmutablePureComponent {
           {signedIn && (<ColumnLink key='blocks' icon='ban' iconComponent={BlockIcon} text={intl.formatMessage(messages.blocks)} to='/blocks' />)}
           {signedIn && (<ColumnLink key='domain_blocks' icon='minus-circle' iconComponent={BlockIcon} text={intl.formatMessage(messages.domain_blocks)} to='/domain_blocks' />)}
           <ColumnLink key='shortcuts' icon='question' iconComponent={InfoIcon} text={intl.formatMessage(messages.keyboard_shortcuts)} to='/keyboard-shortcuts' />
-          <ColumnLink icon='arrow-up' iconComponent={NorthEastIcon} text={intl.formatMessage(messages.vantawebsite)} to='https://vantainteractive.com/' />
-          <ColumnLink icon='arrow-up' iconComponent={NorthEastIcon} text={foramtMessage(messages.vantadocs)} to='https://docs.vantainteractive.com/' />
+          <ColumnLink key='markdownguide' icon='question' iconComponent={InfoIcon} text={intl.formatMessage(messages.markdown_guide)} to='/markdown-guide' />
         </div>
       </Column>
     );

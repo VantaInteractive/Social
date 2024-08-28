@@ -2,7 +2,38 @@ $no-columns-breakpoint: 600px;
 
 code {
   font-family: $font-monospace, monospace;
-  font-weight: 400;
+  font-size: 0.775em;
+  border-radius: 0px;
+  padding: 0 0.4em;
+  background: darken($ui-base-color, 25%);
+}
+
+pre {
+  background: darken($ui-base-color, 25%);
+  border-radius: 0px;
+  padding: 0.75em;
+  counter-reset: line;
+  overflow-x: scroll;
+  border: 0.15rem solid $lightgray;
+}
+
+pre code {
+  counter-increment: line;
+  padding: 0;
+  white-space: pre;
+}
+
+pre code::before {
+  font-size: 0.65em;
+  color: darken($primary-text-color, 33%);
+  content: counter(line);
+  display: inline-block;
+  border-right: 1px solid darken($primary-text-color, 33%);
+  margin: -0.05em 0.7em -0.05em 0;
+  padding: 0.05em 0.5em 0.05em 0;
+  text-align: right;
+  white-space: nowrap;
+  direction: rtl;
 }
 
 .form-container {
@@ -520,7 +551,7 @@ code {
     border: 0;
     border-radius: 0px;
     background: $ui-button-background-color;
-    color: $ui-button-color;
+    color: $black;
     font-size: 15px;
     line-height: 22px;
     height: auto;

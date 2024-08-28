@@ -42,6 +42,7 @@ import {
   Status,
   GettingStarted,
   KeyboardShortcuts,
+  MarkdownGuide,
   Firehose,
   AccountTimeline,
   AccountGallery,
@@ -203,6 +204,7 @@ class SwitchingColumnsArea extends PureComponent {
 
             <WrappedRoute path='/getting-started' component={GettingStarted} content={children} />
             <WrappedRoute path='/keyboard-shortcuts' component={KeyboardShortcuts} content={children} />
+            <WrappedRoute path='/markdown-guide' component={MarkdownGuide} content={children} />
             <WrappedRoute path='/about' component={About} content={children} />
             <WrappedRoute path='/privacy-policy' component={PrivacyPolicy} content={children} />
 

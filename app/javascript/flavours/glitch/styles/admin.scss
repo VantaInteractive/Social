@@ -1198,6 +1198,9 @@ a.name-tag,
             1 * (math.div(max(1, $i), 10))
           );
         }
+        &--#{10 * 10} {
+          color: $black;
+        }
       }
     }
   }
@@ -1334,7 +1337,7 @@ a.sparkline {
       display: inline-block;
       width: 8px;
       height: 8px;
-      border-radius: 50%;
+      border-radius: 0%;
       background: $ui-highlight-color;
       margin-inline-end: 10px;
 
