@@ -18,7 +18,7 @@ end
 Rails.application.routes.draw do
   root 'home#index'
 
-  mount LetterOpenerWeb::Engine, at: 'letter_opener' if Rails.env.development?
+  #mount LetterOpenerWeb::Engine, at: 'letter_opener' if Rails.env.development?
 
   get 'health', to: 'health#show'
 

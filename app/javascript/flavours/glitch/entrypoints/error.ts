@@ -7,7 +7,7 @@ ready(() => {
   if (!image) return;
 
   image.addEventListener('mouseenter', () => {
-    image.src = '/oops.gif';
+    image.src = '/oops.png';
   });
 
   image.addEventListener('mouseleave', () => {
