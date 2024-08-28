@@ -3855,6 +3855,27 @@ $ui-header-logo-wordmark-width: 99px;
   }
 }
 
+.markdown-guide {
+  padding: 8px 0 0;
+  overflow: hidden;
+
+  thead {
+    position: absolute;
+    inset-inline-start: -9999px;
+  }
+
+  td {
+    padding: 0 10px 8px;
+  }
+
+  kbd {
+    display: inline-block;
+    padding: 3px 5px;
+    background-color: lighten($ui-base-color, 8%);
+    border: 1px solid darken($ui-base-color, 4%);
+  }
+}
+
 input.glitch-setting-text {
   box-sizing: border-box;
   color: $darker-text-color;
@@ -4315,6 +4336,7 @@ a.status-card {
     color: inherit;
     background: transparent;
     font: inherit;
+    font-weight: 600;
     text-align: start;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -5588,6 +5610,12 @@ a.status-card {
     .icon {
       width: 18px;
       height: 18px;
+    }
+
+    &__heading-container {
+      padding-right: 10px;
+      display: flex;
+      justify-content: space-between;
     }
 
     &__menu {
@@ -6901,12 +6929,10 @@ img.modal-warning {
   .column {
     flex: auto;
     min-width: 330px;
-    max-width: 400px;
   }
 
   .drawer {
     min-width: 300px;
-    max-width: 400px;
     flex: 1 1 200px;
   }
 }

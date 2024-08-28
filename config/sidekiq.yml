@@ -52,15 +52,15 @@
       class: Scheduler::InstanceRefreshScheduler
       queue: scheduler
     accounts_statuses_cleanup_scheduler:
-      interval: 1 minute
+      interval: 24 hours
       class: Scheduler::AccountsStatusesCleanupScheduler
       queue: scheduler
     suspended_user_cleanup_scheduler:
-      interval: 1 minute
+      interval: 24 hours
       class: Scheduler::SuspendedUserCleanupScheduler
       queue: scheduler
     software_update_check_scheduler:
-      interval: 30 minutes
+      interval: 24 hours
       class: Scheduler::SoftwareUpdateCheckScheduler
       queue: scheduler
     auto_close_registrations_scheduler:
