@@ -6440,8 +6440,8 @@ a.status-card {
 .report-modal,
 .actions-modal,
 .compare-history-modal {
-  background: var(--background-color);
-  color: $primary-text-color;
+  background: $vantagray;
+  color: $white;
   border-radius: 0px;
   border: 1px solid var(--background-border-color);
   overflow: hidden;
