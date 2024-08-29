@@ -6783,8 +6783,8 @@ a.status-card {
 .report-modal,
 .actions-modal,
 .compare-history-modal {
-  background: lighten($ui-secondary-color, 8%);
-  color: $inverted-text-color;
+  background: $vantagray;
+  color: $white;
   border-radius: 0px;
   overflow: hidden;
   max-width: 90vw;
@@ -7134,7 +7134,7 @@ a.status-card {
 
   .setting-text-label {
     display: block;
-    color: $inverted-text-color;
+    color: $lightgray;
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 10px;

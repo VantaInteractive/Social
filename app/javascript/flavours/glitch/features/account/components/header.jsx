@@ -15,6 +15,7 @@ import MoreHorizIcon from '@/material-icons/400-24px/more_horiz.svg?react';
 import NotificationsIcon from '@/material-icons/400-24px/notifications.svg?react';
 import NotificationsActiveIcon from '@/material-icons/400-24px/notifications_active-fill.svg?react';
 import ShareIcon from '@/material-icons/400-24px/share.svg?react';
+import PaymentsIcon from '@/material-icons/400-24px/payments.svg?react';
 import { Avatar } from 'flavours/glitch/components/avatar';
 import { Badge, AutomatedBadge, GroupBadge } from 'flavours/glitch/components/badge';
 import { Button } from 'flavours/glitch/components/button';
