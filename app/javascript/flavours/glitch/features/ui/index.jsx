@@ -339,8 +339,8 @@ class UI extends PureComponent {
 
     try {
       e.dataTransfer.dropEffect = 'copy';
-    } catch (err) {
-
+    } catch {
+      // do nothing
     }
 
     return false;
