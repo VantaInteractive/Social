@@ -44,7 +44,7 @@ pre code::before {
 }
 
 .form-section {
-  border-radius: 8px;
+  border-radius: 0px;
   background: var(--surface-background-color);
   padding: 24px;
   margin-bottom: 24px;
@@ -817,7 +817,7 @@ pre code::before {
   margin-bottom: 30px;
 
   .flash-message {
-    border-radius: 0;
+    border-radius: 0px;
     margin-bottom: 0;
     border-top-width: 0;
 

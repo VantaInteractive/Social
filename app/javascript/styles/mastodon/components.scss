@@ -49,7 +49,7 @@
 .button {
   background-color: $ui-button-background-color;
   border: 10px none;
-  border-radius: 4px;
+  border-radius: 0px;
   box-sizing: border-box;
   color: $ui-button-color;
   cursor: pointer;
@@ -220,7 +220,7 @@
   color: $action-button-color;
   border: 0;
   padding: 0;
-  border-radius: 4px;
+  border-radius: 0px;
   background: transparent;
   cursor: pointer;
   align-items: center;
@@ -291,7 +291,7 @@
     background: rgba($black, 0.65);
     backdrop-filter: blur(10px) saturate(180%) contrast(75%) brightness(70%);
     color: rgba($white, 0.7);
-    border-radius: 4px;
+    border-radius: 0px;
     padding: 2px;
 
     &:hover {
@@ -321,7 +321,7 @@
 .text-icon-button {
   color: $lighter-text-color;
   border: 0;
-  border-radius: 4px;
+  border-radius: 0px;
   background: transparent;
   cursor: pointer;
   font-weight: 600;
@@ -527,7 +527,7 @@ body > [data-popper-placement] {
     flex-direction: column;
     gap: 16px;
     flex: 0 1 auto;
-    border-radius: 4px;
+    border-radius: 0px;
     border: 1px solid var(--background-border-color);
     transition: border-color 300ms linear;
     min-height: 0;
@@ -546,7 +546,7 @@ body > [data-popper-placement] {
     background: $ui-primary-color;
     box-shadow: 0 2px 6px rgba($base-shadow-color, 0.3);
     padding: 8px 10px;
-    border-radius: 4px;
+    border-radius: 0px;
     font-size: 13px;
     font-weight: 400;
 
@@ -661,7 +661,7 @@ body > [data-popper-placement] {
       position: absolute;
       width: 100%;
       height: 100%;
-      border-radius: 6px;
+      border-radius: 0px;
       z-index: -1;
       top: 0;
       inset-inline-start: 0;
@@ -670,7 +670,7 @@ body > [data-popper-placement] {
     &__thumbnail {
       width: 100%;
       height: 144px;
-      border-radius: 6px;
+      border-radius: 0px;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -681,7 +681,7 @@ body > [data-popper-placement] {
       flex: 0 0 auto;
       color: $white;
       background: rgba(0, 0, 0, 75%);
-      border-radius: 6px;
+      border-radius: 0px;
       font-size: 12px;
       line-height: 16px;
       font-weight: 500;
@@ -864,7 +864,7 @@ body > [data-popper-placement] {
   gap: 4px;
   background: transparent;
   color: $highlight-text-color;
-  border-radius: 6px;
+  border-radius: 0px;
   border: 1px solid $highlight-text-color;
   padding: 4px 8px;
   font-size: 13px;
@@ -1146,7 +1146,7 @@ body > [data-popper-placement] {
 }
 
 .edit-indicator {
-  border-radius: 4px 4px 0 0;
+  border-radius: 0px;
   background: lighten($ui-base-color, 4%);
   padding: 12px;
   overflow-y: auto;
@@ -1316,7 +1316,7 @@ body > [data-popper-placement] {
 
 .status__content__spoiler-link {
   display: inline-block;
-  border-radius: 2px;
+  border-radius: 0px;
   background: transparent;
   border: 0;
   color: $inverted-text-color;
@@ -1878,7 +1878,7 @@ body > [data-popper-placement] {
   &__domain-pill {
     display: inline-flex;
     background: rgba($highlight-text-color, 0.2);
-    border-radius: 4px;
+    border-radius: 0px;
     border: 0;
     color: $highlight-text-color;
     font-weight: 500;
@@ -1898,7 +1898,7 @@ body > [data-popper-placement] {
       box-shadow: var(--dropdown-shadow);
       max-width: 320px;
       padding: 16px;
-      border-radius: 8px;
+      border-radius: 0px;
       display: flex;
       flex-direction: column;
       gap: 24px;
@@ -1941,7 +1941,7 @@ body > [data-popper-placement] {
         background: rgba($highlight-text-color, 0.1);
         padding: 12px 8px;
         color: $highlight-text-color;
-        border-radius: 4px;
+        border-radius: 0px;
 
         &__label {
           font-size: 11px;
@@ -2126,7 +2126,7 @@ a .account__avatar {
 .explore__suggestions__card {
   .icon-button {
     border: 1px solid var(--background-border-color);
-    border-radius: 4px;
+    border-radius: 0px;
     box-sizing: content-box;
     padding: 5px;
 
@@ -2537,7 +2537,7 @@ a.account__display-name {
   backdrop-filter: var(--background-filter);
   border: 1px solid var(--dropdown-border-color);
   padding: 4px;
-  border-radius: 4px;
+  border-radius: 0px;
   box-shadow: var(--dropdown-shadow);
   z-index: 9999;
 
@@ -2638,7 +2638,7 @@ a.account__display-name {
     text-overflow: ellipsis;
     white-space: nowrap;
     text-align: inherit;
-    border-radius: 4px;
+    border-radius: 0px;
 
     &:focus,
     &:hover,
@@ -2828,7 +2828,7 @@ $ui-header-logo-wordmark-width: 99px;
     &.about,
     &.privacy-policy {
       border-top: 1px solid var(--background-border-color);
-      border-radius: 4px;
+      border-radius: 0px;
 
       @media screen and (max-width: $no-gap-breakpoint) {
         border-top: 0;
@@ -3150,7 +3150,7 @@ $ui-header-logo-wordmark-width: 99px;
     background: $ui-highlight-color;
     border: 2px solid var(--background-color);
     padding: 1px 6px;
-    border-radius: 6px;
+    border-radius: 0px;
     font-size: 10px;
     font-weight: 500;
     line-height: 14px;
@@ -3216,7 +3216,7 @@ $ui-header-logo-wordmark-width: 99px;
   gap: 10px;
   color: $highlight-text-color;
   background: lighten($ui-base-color, 4%);
-  border-radius: 8px;
+  border-radius: 0px;
   padding: 10px 15px;
   box-sizing: border-box;
   font-size: 14px;
@@ -3275,7 +3275,7 @@ $ui-header-logo-wordmark-width: 99px;
   &__item {
     background: lighten($ui-base-color, 4%);
     border: 0;
-    border-radius: 8px;
+    border-radius: 0px;
     display: flex;
     width: 100%;
     box-sizing: border-box;
@@ -3362,7 +3362,7 @@ $ui-header-logo-wordmark-width: 99px;
 
 .follow-recommendations {
   background: darken($ui-base-color, 4%);
-  border-radius: 8px;
+  border-radius: 0px;
   margin-bottom: 30px;
 
   .account:last-child {
@@ -3379,7 +3379,7 @@ $ui-header-logo-wordmark-width: 99px;
 
 .tip-carousel {
   border: 1px solid transparent;
-  border-radius: 8px;
+  border-radius: 0px;
   padding: 16px;
   margin-bottom: 30px;
 
@@ -3395,7 +3395,7 @@ $ui-header-logo-wordmark-width: 99px;
 
 .copy-paste-text {
   background: lighten($ui-base-color, 4%);
-  border-radius: 8px;
+  border-radius: 0px;
   border: 1px solid var(--background-border-color);
   padding: 16px;
   color: $primary-text-color;
@@ -3516,7 +3516,7 @@ $ui-header-logo-wordmark-width: 99px;
   position: relative;
   overflow: hidden;
   display: flex;
-  border-radius: 4px;
+  border-radius: 0px;
   border: 1px solid var(--background-border-color);
 }
 
@@ -3565,7 +3565,7 @@ $ui-header-logo-wordmark-width: 99px;
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
-  border-radius: 4px;
+  border-radius: 0px;
   overflow: hidden;
 
   a:hover,
@@ -3618,7 +3618,7 @@ $ui-header-logo-wordmark-width: 99px;
   width: 100%;
   background: transparent;
   border: 1px solid var(--background-border-color);
-  border-radius: 4px 4px 0 0;
+  border-radius: 0px;
   color: $highlight-text-color;
   cursor: pointer;
   flex: 0 0 auto;
@@ -3668,7 +3668,7 @@ $ui-header-logo-wordmark-width: 99px;
   cursor: pointer;
   background-color: transparent;
   border: 0;
-  border-radius: 10px;
+  border-radius: 0px;
   padding: 0;
   user-select: none;
   -webkit-tap-highlight-color: rgba($base-overlay-background, 0);
@@ -3696,7 +3696,7 @@ $ui-header-logo-wordmark-width: 99px;
   width: 32px;
   height: 20px;
   padding: 0;
-  border-radius: 10px;
+  border-radius: 0px;
   background-color: $ui-primary-color;
 }
 
@@ -3744,7 +3744,7 @@ $ui-header-logo-wordmark-width: 99px;
   color: $light-text-color;
   background-color: $ui-base-color;
   padding: 15px;
-  border-radius: 4px;
+  border-radius: 0px;
   margin-top: 4px;
   margin-bottom: 12px;
   font-size: 13px;
@@ -3803,7 +3803,7 @@ $ui-header-logo-wordmark-width: 99px;
 
 .column-link__badge {
   display: inline-block;
-  border-radius: 4px;
+  border-radius: 0px;
   font-size: 12px;
   line-height: 19px;
   font-weight: 500;
@@ -3913,7 +3913,7 @@ $ui-header-logo-wordmark-width: 99px;
   font-family: inherit;
   font-size: 14px;
   line-height: 22px;
-  border-radius: 4px;
+  border-radius: 0px;
   border: 1px solid var(--background-border-color);
 
   &:focus {
@@ -3924,7 +3924,7 @@ $ui-header-logo-wordmark-width: 99px;
     background: $ui-base-color;
     border: 1px solid var(--background-border-color);
     margin-bottom: 10px;
-    border-radius: 4px;
+    border-radius: 0px;
 
     .setting-text {
       border: 0;
@@ -3965,10 +3965,10 @@ $ui-header-logo-wordmark-width: 99px;
   text-decoration: none;
   overflow: hidden;
   border: 1px solid var(--background-border-color);
-  border-radius: 8px;
+  border-radius: 0px;
 
   &.bottomless {
-    border-radius: 8px 8px 0 0;
+    border-radius: 0px;
   }
 
   &__actions {
@@ -3984,7 +3984,7 @@ $ui-header-logo-wordmark-width: 99px;
 
     & > div {
       background: rgba($base-shadow-color, 0.6);
-      border-radius: 8px;
+      border-radius: 0px;
       padding: 12px 9px;
       backdrop-filter: blur(10px) saturate(180%) contrast(75%) brightness(70%);
       flex: 0 0 auto;
@@ -4377,7 +4377,7 @@ a.status-card {
   display: flex;
   font-size: 16px;
   border: 1px solid var(--background-border-color);
-  border-radius: 4px 4px 0 0;
+  border-radius: 0px;
   flex: 0 0 auto;
   cursor: pointer;
   position: relative;
@@ -4754,7 +4754,7 @@ a.status-card {
     &__label {
       background-color: rgba($black, 0.45);
       backdrop-filter: blur(10px) saturate(180%) contrast(75%) brightness(70%);
-      border-radius: 8px;
+      border-radius: 0px;
       padding: 12px 16px;
       display: flex;
       align-items: center;
@@ -4940,7 +4940,7 @@ a.status-card {
 
     &__option {
       color: $inverted-text-color;
-      border-radius: 4px;
+      border-radius: 0px;
       font-size: 14px;
 
       &--is-focused,
@@ -4967,7 +4967,7 @@ a.status-card {
   text-transform: uppercase;
   font-weight: 700;
   padding: 2px 6px;
-  border-radius: 4px;
+  border-radius: 0px;
 }
 
 .setting-toggle {
@@ -5026,7 +5026,7 @@ a.status-card {
 .error-column {
   padding: 20px;
   border: 1px solid var(--background-border-color);
-  border-radius: 4px;
+  border-radius: 0px;
   display: flex;
   flex: 1 1 auto;
   align-items: center;
@@ -5108,7 +5108,7 @@ a.status-card {
   backdrop-filter: var(--background-filter);
   border: 1px solid var(--dropdown-border-color);
   box-shadow: var(--dropdown-shadow);
-  border-radius: 5px;
+  border-radius: 0px;
 
   .emoji-mart-scroll {
     transition: opacity 200ms ease;
@@ -5133,7 +5133,7 @@ a.status-card {
   inset-inline-start: -9px;
   background: var(--dropdown-background-color);
   border: 1px solid var(--dropdown-border-color);
-  border-radius: 4px;
+  border-radius: 0px;
   box-shadow: var(--dropdown-shadow);
   overflow: hidden;
 
@@ -5197,7 +5197,7 @@ a.status-card {
   bottom: 0;
   inset-inline-start: 0;
   z-index: -1;
-  border-radius: 4px;
+  border-radius: 0px;
   background: $ui-base-color;
   box-shadow: 0 0 5px rgba($base-shadow-color, 0.2);
 }
@@ -5212,7 +5212,7 @@ a.status-card {
   font-size: 18px;
   font-weight: 500;
   border: 2px dashed $ui-base-lighter-color;
-  border-radius: 4px;
+  border-radius: 0px;
 }
 
 .upload-progress {
@@ -5244,7 +5244,7 @@ a.status-card {
 .upload-progress__backdrop {
   width: 100%;
   height: 6px;
-  border-radius: 6px;
+  border-radius: 0px;
   background: var(--background-color);
   position: relative;
   margin-top: 5px;
@@ -5256,7 +5256,7 @@ a.status-card {
   top: 0;
   height: 6px;
   background: $ui-highlight-color;
-  border-radius: 6px;
+  border-radius: 0px;
 }
 
 .emoji-button {
@@ -5306,7 +5306,7 @@ a.status-card {
   backdrop-filter: var(--background-filter);
   border: 1px solid var(--dropdown-border-color);
   padding: 4px;
-  border-radius: 4px;
+  border-radius: 0px;
   overflow: hidden;
   z-index: 2;
   width: 300px;
@@ -5338,7 +5338,7 @@ a.status-card {
   display: flex;
   align-items: center;
   gap: 12px;
-  border-radius: 4px;
+  border-radius: 0px;
   color: $primary-text-color;
 
   &:hover,
@@ -5442,7 +5442,7 @@ a.status-card {
         letter-spacing: 0.25px;
         font-weight: 500;
         padding: 8px 12px;
-        border-radius: 4px;
+        border-radius: 0px;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -5535,7 +5535,7 @@ a.status-card {
         color: $darker-text-color;
         padding: 10px;
         cursor: pointer;
-        border-radius: 4px;
+        border-radius: 0px;
         text-align: start;
         text-overflow: ellipsis;
         overflow: hidden;
@@ -5578,7 +5578,7 @@ a.status-card {
 
   &.active {
     .search__input {
-      border-radius: 4px 4px 0 0;
+      border-radius: 0px;
     }
 
     .search__popout {
@@ -5963,7 +5963,7 @@ a.status-card {
 .embed-modal {
   background: $ui-secondary-color;
   color: $inverted-text-color;
-  border-radius: 8px;
+  border-radius: 0px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -6022,7 +6022,7 @@ a.status-card {
     line-height: inherit;
     height: auto;
     margin: -10px;
-    border-radius: 4px;
+    border-radius: 0px;
     background-color: transparent;
 
     &:hover,
@@ -6067,7 +6067,7 @@ a.status-card {
     color: $secondary-text-color;
     font-weight: 500;
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 0px;
   }
 }
 
@@ -6094,7 +6094,7 @@ a.status-card {
   }
 
   &__top {
-    border-radius: 16px 16px 0 0;
+    border-radius: 0px;
     border-bottom: 0;
     gap: 16px;
   }
@@ -6119,7 +6119,7 @@ a.status-card {
     color: $darker-text-color;
 
     &__icon {
-      border-radius: 64px;
+      border-radius: 0px;
       background: $ui-highlight-color;
       color: $white;
       display: flex;
@@ -6163,7 +6163,7 @@ a.status-card {
 
   &__status {
     border: 1px solid var(--modal-border-color);
-    border-radius: 8px;
+    border-radius: 0px;
     padding: 8px;
     cursor: pointer;
 
@@ -6300,7 +6300,7 @@ a.status-card {
   background: var(--modal-background-color);
   backdrop-filter: var(--background-filter);
   border: 1px solid var(--modal-border-color);
-  border-radius: 16px;
+  border-radius: 0px;
 
   &__header {
     border-bottom: 1px solid var(--modal-border-color);
@@ -6345,7 +6345,7 @@ a.status-card {
   kbd {
     padding: 3px 5px;
     border: 1px solid var(--background-border-color);
-    border-radius: 4px;
+    border-radius: 0px;
   }
 }
 
@@ -6355,7 +6355,7 @@ a.status-card {
 .compare-history-modal {
   background: var(--background-color);
   color: $primary-text-color;
-  border-radius: 4px;
+  border-radius: 0px;
   border: 1px solid var(--background-border-color);
   overflow: hidden;
   max-width: 90vw;
@@ -6365,7 +6365,7 @@ a.status-card {
 
   @media screen and (max-width: $no-columns-breakpoint) {
     border-bottom: 0;
-    border-radius: 4px 4px 0 0;
+    border-radius: 0px;
   }
 }
 
@@ -6414,7 +6414,7 @@ a.status-card {
   height: 80vh;
   background: var(--background-color);
   color: $primary-text-color;
-  border-radius: 4px;
+  border-radius: 0px;
   border: 1px solid var(--background-border-color);
   overflow: hidden;
   position: relative;
@@ -6576,7 +6576,7 @@ a.status-card {
     border: 0;
     border: 1px solid var(--background-border-color);
     outline: 0;
-    border-radius: 4px;
+    border-radius: 0px;
     margin: 20px 0;
 
     &:focus {
@@ -6822,7 +6822,7 @@ a.status-card {
       url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14.933 18.467' height='19.698' width='15.929'><path d='M3.467 14.967l-3.393-3.5H14.86l-3.392 3.5c-1.866 1.925-3.666 3.5-4 3.5-.335 0-2.135-1.575-4-3.5zm.266-11.234L7.467 0 11.2 3.733l3.733 3.734H0l3.733-3.734z' fill='#{hex-color(darken($simple-background-color, 14%))}'/></svg>")
       no-repeat right 8px center / auto 16px;
     border: 1px solid darken($simple-background-color, 14%);
-    border-radius: 4px;
+    border-radius: 0px;
     padding: 6px 10px;
     padding-inline-end: 30px;
   }
@@ -6908,7 +6908,7 @@ a.status-card {
     background: rgba($black, 0.65);
     backdrop-filter: blur(10px) saturate(180%) contrast(75%) brightness(70%);
     padding: 3px 12px;
-    border-radius: 99px;
+    border-radius: 0px;
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
@@ -6932,7 +6932,7 @@ a.status-card {
   background: rgba($black, 0.65);
   backdrop-filter: blur(10px) saturate(180%) contrast(75%) brightness(70%);
   padding: 3px 8px;
-  border-radius: 4px;
+  border-radius: 0px;
   font-size: 12px;
   font-weight: 700;
   z-index: 1;
@@ -6944,7 +6944,7 @@ a.status-card {
   display: flex;
   font-size: 14px;
   border: 1px solid var(--background-border-color);
-  border-radius: 4px;
+  border-radius: 0px;
   margin-top: 16px;
   overflow: hidden;
 
@@ -7005,7 +7005,7 @@ a.status-card {
   box-sizing: border-box;
   margin-top: 8px;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 0px;
   position: relative;
   width: 100%;
   min-height: 64px;
@@ -7078,7 +7078,7 @@ a.status-card {
   box-sizing: border-box;
   display: block;
   position: relative;
-  border-radius: 8px;
+  border-radius: 0px;
   overflow: hidden;
 
   &--tall {
@@ -7164,7 +7164,7 @@ a.status-card {
   box-sizing: border-box;
   position: relative;
   background: var(--background-color);
-  border-radius: 8px;
+  border-radius: 0px;
   padding-bottom: 44px;
   width: 100%;
 
@@ -7231,7 +7231,7 @@ a.status-card {
   position: relative;
   background: $base-shadow-color;
   max-width: 100%;
-  border-radius: 8px;
+  border-radius: 0px;
   box-sizing: border-box;
   color: $white;
   display: flex;
@@ -7420,7 +7420,7 @@ a.status-card {
       content: '';
       width: 50px;
       background: rgba($white, 0.35);
-      border-radius: 4px;
+      border-radius: 0px;
       display: block;
       position: absolute;
       height: 4px;
@@ -7433,7 +7433,7 @@ a.status-card {
       display: block;
       position: absolute;
       height: 4px;
-      border-radius: 4px;
+      border-radius: 0px;
       inset-inline-start: 0;
       top: 50%;
       transform: translate(0, -50%);
@@ -7490,7 +7490,7 @@ a.status-card {
       content: '';
       width: 100%;
       background: rgba($white, 0.35);
-      border-radius: 4px;
+      border-radius: 0px;
       display: block;
       position: absolute;
       height: 4px;
@@ -7502,7 +7502,7 @@ a.status-card {
       display: block;
       position: absolute;
       height: 4px;
-      border-radius: 4px;
+      border-radius: 0px;
       top: 14px;
       background: lighten($ui-highlight-color, 8%);
     }
@@ -7573,7 +7573,7 @@ a.status-card {
 
 .scrollable .account-card__header {
   img {
-    border-radius: 4px;
+    border-radius: 0px;
   }
 }
 
@@ -7592,7 +7592,7 @@ a.status-card {
   box-sizing: border-box;
   display: block;
   position: relative;
-  border-radius: 4px;
+  border-radius: 0px;
   overflow: hidden;
   margin: 2px;
 
@@ -7650,7 +7650,7 @@ a.status-card {
         transform: translateX(-50%);
         width: 40px;
         height: 3px;
-        border-radius: 4px 4px 0 0;
+        border-radius: 0px;
         background: $highlight-text-color;
       }
     }
@@ -7740,7 +7740,7 @@ a.status-card {
   &__input {
     width: 18px;
     height: 18px;
-    border-radius: 2px;
+    border-radius: 0px;
 
     &.checked,
     &.indeterminate {
@@ -7867,7 +7867,7 @@ noscript {
 .list-editor {
   background: $ui-base-color;
   flex-direction: column;
-  border-radius: 8px;
+  border-radius: 0px;
   box-shadow: 2px 4px 15px rgba($base-shadow-color, 0.4);
   width: 380px;
   overflow: hidden;
@@ -7882,12 +7882,12 @@ noscript {
     font-weight: 500;
     font-size: 16px;
     text-align: center;
-    border-radius: 8px 8px 0 0;
+    border-radius: 0px;
   }
 
   .drawer__pager {
     height: 50vh;
-    border-radius: 4px;
+    border-radius: 0px;
   }
 
   .drawer__inner {
@@ -7922,7 +7922,7 @@ noscript {
 .list-adder {
   background: $ui-base-color;
   flex-direction: column;
-  border-radius: 8px;
+  border-radius: 0px;
   box-shadow: 2px 4px 15px rgba($base-shadow-color, 0.4);
   width: 380px;
   overflow: hidden;
@@ -8021,7 +8021,7 @@ noscript {
     }
 
     div {
-      border-radius: 4px;
+      border-radius: 0px;
       box-shadow: 0 0 14px rgba($base-shadow-color, 0.2);
     }
   }
@@ -8152,7 +8152,7 @@ noscript {
 
       .icon-button {
         border: 1px solid lighten($ui-base-color, 12%);
-        border-radius: 4px;
+        border-radius: 0px;
         box-sizing: content-box;
         padding: 5px;
 
@@ -8232,7 +8232,7 @@ noscript {
     .account__header__fields {
       margin: 0;
       margin-top: 16px;
-      border-radius: 4px;
+      border-radius: 0px;
       border: 1px solid var(--background-border-color);
 
       dl {
@@ -8360,7 +8360,7 @@ noscript {
       resize: none;
       border: 0;
       outline: 0;
-      border-radius: 4px;
+      border-radius: 0px;
 
       &::placeholder {
         color: $dark-text-color;
@@ -8692,7 +8692,7 @@ noscript {
     flex-shrink: 0;
     background: lighten($ui-base-color, 12%);
     border: 0;
-    border-radius: 3px;
+    border-radius: 0px;
     margin: 2px;
     cursor: pointer;
     user-select: none;
@@ -8831,7 +8831,7 @@ noscript {
   }
 
   &__header {
-    border-radius: 4px 4px 0 0;
+    border-radius: 0px;
     background: lighten($ui-base-color, 4%);
     padding: 10px;
     display: flex;
@@ -9029,7 +9029,7 @@ noscript {
 
       &__pill {
         background: var(--surface-variant-background-color);
-        border-radius: 4px;
+        border-radius: 0px;
         color: inherit;
         text-decoration: none;
         padding: 4px 12px;
@@ -9071,7 +9071,7 @@ noscript {
     }
 
     img {
-      border-radius: 8px;
+      border-radius: 0px;
       display: block;
       margin: 0;
       width: 100%;
@@ -9080,7 +9080,7 @@ noscript {
     }
 
     &__preview {
-      border-radius: 8px;
+      border-radius: 0px;
       display: block;
       margin: 0;
       width: 100%;
@@ -9140,7 +9140,7 @@ noscript {
 
   &__hero {
     display: block;
-    border-radius: 4px;
+    border-radius: 0px;
     width: 100%;
     height: auto;
     margin-bottom: 20px;
@@ -9213,7 +9213,7 @@ noscript {
   overflow: visible;
   position: relative;
   display: block;
-  border-radius: 16px;
+  border-radius: 0px;
   background: var(--modal-background-color);
   backdrop-filter: var(--background-filter);
   border: 1px solid var(--modal-border-color);
@@ -9221,7 +9221,7 @@ noscript {
   box-sizing: border-box;
 
   @media screen and (max-width: $mobile-breakpoint) {
-    border-radius: 16px 16px 0 0;
+    border-radius: 0px;
     border-bottom: 0;
     padding-bottom: 32px;
   }
@@ -9326,7 +9326,7 @@ noscript {
     }
 
     &.expanded &__input {
-      border-radius: 4px 4px 0 0;
+      border-radius: 0px;
     }
   }
 
@@ -9385,7 +9385,7 @@ noscript {
     background: darken($ui-base-color, 8%);
     border: 1px solid $highlight-text-color;
     color: $darker-text-color;
-    border-radius: 4px;
+    border-radius: 0px;
     padding: 6px 9px;
     line-height: 22px;
     font-size: 14px;
@@ -9421,7 +9421,7 @@ noscript {
   padding: 20px;
 
   @media screen and (min-width: $no-gap-breakpoint) {
-    border-radius: 4px;
+    border-radius: 0px;
   }
 
   &__body {
@@ -9588,7 +9588,7 @@ noscript {
   code {
     font-size: 0.875em;
     background: darken($ui-base-color, 8%);
-    border-radius: 4px;
+    border-radius: 0px;
     padding: 0.2em 0.3em;
   }
 
@@ -9631,7 +9631,7 @@ noscript {
   position: relative;
   margin: 10px;
   margin-bottom: 5px;
-  border-radius: 8px;
+  border-radius: 0px;
   border: 1px solid $highlight-text-color;
   background: rgba($highlight-text-color, 0.15);
   overflow: hidden;
@@ -9789,7 +9789,7 @@ noscript {
   border-top: 1px solid var(--background-border-color);
 
   @media screen and (min-width: $no-gap-breakpoint) {
-    border-radius: 4px;
+    border-radius: 0px;
   }
 
   &__footer {
@@ -9808,7 +9808,7 @@ noscript {
       height: auto;
       aspect-ratio: 1.9;
       background: lighten($ui-base-color, 4%);
-      border-radius: 8px;
+      border-radius: 0px;
       margin-bottom: 30px;
     }
 
@@ -9834,7 +9834,7 @@ noscript {
 
   &__meta {
     border: 1px solid var(--background-border-color);
-    border-radius: 4px;
+    border-radius: 0px;
     display: flex;
     margin-bottom: 30px;
     font-size: 15px;
@@ -9956,14 +9956,14 @@ noscript {
       font-weight: 600;
       line-height: 22px;
       padding: 20px;
-      border-radius: 4px;
+      border-radius: 0px;
       border: 1px solid var(--background-border-color);
       color: $highlight-text-color;
       cursor: pointer;
     }
 
     &.active &__title {
-      border-radius: 4px 4px 0 0;
+      border-radius: 0px;
     }
 
     &__body {
@@ -9978,7 +9978,7 @@ noscript {
   &__domain-blocks {
     margin-top: 30px;
     border: 1px solid var(--background-border-color);
-    border-radius: 4px;
+    border-radius: 0px;
 
     &__domain {
       border-bottom: 1px solid var(--background-border-color);
@@ -10040,7 +10040,7 @@ noscript {
   background: rgba($black, 0.85);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(lighten($classic-base-color, 4%), 0.85);
-  border-radius: 8px;
+  border-radius: 0px;
   box-shadow:
     0 10px 15px -3px rgba($base-shadow-color, 0.25),
     0 4px 6px -4px rgba($base-shadow-color, 0.25);
@@ -10072,7 +10072,7 @@ noscript {
   margin-inline-start: 10px;
   cursor: pointer;
   color: $blurple-300;
-  border-radius: 4px;
+  border-radius: 0px;
   padding: 0 4px;
 
   &:hover,
@@ -10127,7 +10127,7 @@ noscript {
     text-decoration: none;
     padding: 4px 12px;
     background: var(--surface-variant-background-color);
-    border-radius: 4px;
+    border-radius: 0px;
     font-weight: 500;
 
     &:hover,
@@ -10239,7 +10239,7 @@ noscript {
       &__card {
         background: var(--background-color);
         border: 1px solid var(--background-border-color);
-        border-radius: 4px;
+        border-radius: 0px;
         display: flex;
         flex-direction: column;
         gap: 12px;
@@ -10449,7 +10449,7 @@ noscript {
 
     .filtered-notifications-banner__badge {
       background: $ui-button-background-color;
-      border-radius: 4px;
+      border-radius: 0px;
       padding: 1px 6px;
       color: $white;
     }
@@ -10461,7 +10461,7 @@ noscript {
     gap: 8px;
 
     .icon-button {
-      border-radius: 4px;
+      border-radius: 0px;
       border: 1px solid var(--background-border-color);
       padding: 5px;
     }
@@ -10638,7 +10638,7 @@ noscript {
 
     &__status {
       border: 1px solid var(--background-border-color);
-      border-radius: 8px;
+      border-radius: 0px;
       padding: 8px;
     }
 
@@ -10724,7 +10724,7 @@ noscript {
     font-weight: 700;
     flex: 1 1 auto;
     padding: 5px 12px;
-    border-radius: 4px;
+    border-radius: 0px;
   }
 }
 
@@ -10833,7 +10833,7 @@ noscript {
   background: var(--modal-background-color);
   backdrop-filter: var(--background-filter);
   border: 1px solid var(--modal-border-color);
-  border-radius: 8px;
+  border-radius: 0px;
   padding: 16px;
   width: 270px;
   display: flex;
