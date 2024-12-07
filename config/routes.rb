@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     /home
     /public
     /public/local
+    /public/bubble
     /public/remote
     /conversations
     /lists/(*any)
