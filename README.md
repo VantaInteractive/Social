@@ -27,24 +27,19 @@ As compared to 'vanilla' Mastodon, with this repo and the original repo's commit
 - ADDED (was merged to Glitch Edition while editing the README.md for the first time): Grouped Notifications UI
 
 #### From Mastodon Glitch Edition
-- ADDED: Media Improvements
-- ADDED: Formatted toots
-- ADDED: Highlighting of misleading links
-- ADDED: The option to hide your follower count
-- REMOVED: App settings modal (integrated into Mastodon settings UI page)
-- ADDED: Collapsible toots
-- ADDED: Colored toot visibility icon
-- ADDED: Local-only tweets
-- ADDED: Threaded mode
-- ADDED: CSS data status attributes
-- ADDED: Glitch flavours & skins
 - REMOVED: Doodle
 
 #### From kiyo.social
 - ADDED: Jit.si integration
 
+#### From TheEssem/Mastodon
+- ADDED: [Emoji reactions](https://github.com/glitch-soc/mastodon/pull/2462) and [allowing dashes in emoji shortcodes](https://github.com/TheEssem/mastodon/commit/c5d084f11ab0f66aa039020d6fb8d2ad0c064d53#diff-f9a445238e0976bb929a67c223f33906304867e27d24e4de79c7421e8d48101dR30)
+- ADDED: [Bubble timeline](https://github.com/TheEssem/mastodon/tree/feature/bubble-timeline)
+
 #### VantaInteractive/Social additions
 - ADDED: More sharp Material Symbols icons changes in the interface, for a more unified and coherent design that works well with Obsidian Design
+- ADDED: Markdown guide
+- ADDED: Design similar to the Obsidian Design system used in places such as the [AlexTECPlayz website](https://alextecplayz.github.io) or [carbon](https://github.com/VantaInteractive/carbon)
 
 ## Deployment
 
@@ -214,6 +209,8 @@ Make sure `curl`, `wget`, `gnupg`, `apt-transport-https`, `lsb-release` and `ca-
 curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
 echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list
 ```
+
+Alternatively, you can install [nvm](https://github.com/nvm-sh/nvm) and install Node 20 LTS from there.
 
 ##### PostgreSQL
 
