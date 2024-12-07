@@ -1,12 +1,6 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
-  DANGEROUS_SCOPES = %w(
-    read
-    write
-    follow
-  ).freeze
-
   RTL_LOCALES = %i(
     ar
     ckb
@@ -85,7 +79,7 @@ module ApplicationHelper
 
   def html_title
     safe_join(
-      [content_for(:page_title).to_s.chomp, title]
+      [content_for(:page_title), title]
       .compact_blank,
       ' - '
     )
@@ -95,8 +89,11 @@ module ApplicationHelper
     Rails.env.production? ? site_title : "#{site_title} (Dev)"
   end
 
-  def class_for_scope(scope)
-    'scope-danger' if DANGEROUS_SCOPES.include?(scope.to_s)
+  def label_for_scope(scope)
+    safe_join [
+      tag.samp(scope, class: { 'scope-danger' => SessionActivation::DEFAULT_SCOPES.include?(scope.to_s) }),
+      tag.span(t("doorkeeper.scopes.#{scope}"), class: :hint),
+    ]
   end
 
   def can?(action, record)
@@ -123,18 +120,6 @@ module ApplicationHelper
     inline_svg_tag 'check.svg'
   end
 
-  def visibility_icon(status)
-    if status.public_visibility?
-      material_symbol('globe', title: I18n.t('statuses.visibilities.public'))
-    elsif status.unlisted_visibility?
-      material_symbol('lock_open', title: I18n.t('statuses.visibilities.unlisted'))
-    elsif status.private_visibility? || status.limited_visibility?
-      material_symbol('lock', title: I18n.t('statuses.visibilities.private'))
-    elsif status.direct_visibility?
-      material_symbol('alternate_email', title: I18n.t('statuses.visibilities.direct'))
-    end
-  end
-
   def interrelationships_icon(relationships, account_id)
     if relationships.following[account_id] && relationships.followed_by[account_id]
       material_symbol('sync_alt', title: I18n.t('relationships.mutual'), class: 'active passive')
@@ -158,7 +143,7 @@ module ApplicationHelper
   end
 
   def body_classes
-    output = body_class_string.split
+    output = []
     output << content_for(:body_classes)
     output << "flavour-#{current_flavour.parameterize}"
     output << "skin-#{current_skin.parameterize}"
@@ -244,18 +229,27 @@ module ApplicationHelper
     full_asset_url(instance_presenter.mascot&.file&.url || frontend_asset_path('images/elephant_ui_plane.svg'))
   end
 
+  def copyable_input(options = {})
+    tag.input(type: :text, maxlength: 999, spellcheck: false, readonly: true, **options)
+  end
+
+  def recent_tag_usage(tag)
+    people = tag.history.aggregate(2.days.ago.to_date..Time.zone.today).accounts
+    I18n.t 'user_mailer.welcome.hashtags_recent_count', people: number_with_delimiter(people), count: people
+  end
+
   # glitch-soc addition to handle the multiple flavors
   def preload_locale_pack
     supported_locales = Themes.instance.flavour(current_flavour)['locales']
     preload_pack_asset "locales/#{current_flavour}/#{I18n.locale}-json.js" if supported_locales.include?(I18n.locale.to_s)
   end
 
-  def flavoured_javascript_pack_tag(pack_name, **options)
-    javascript_pack_tag("flavours/#{current_flavour}/#{pack_name}", **options)
+  def flavoured_javascript_pack_tag(pack_name, **)
+    javascript_pack_tag("flavours/#{current_flavour}/#{pack_name}", **)
   end
 
-  def flavoured_stylesheet_pack_tag(pack_name, **options)
-    stylesheet_pack_tag("flavours/#{current_flavour}/#{pack_name}", **options)
+  def flavoured_stylesheet_pack_tag(pack_name, **)
+    stylesheet_pack_tag("flavours/#{current_flavour}/#{pack_name}", **)
   end
 
   def preload_signed_in_js_packs

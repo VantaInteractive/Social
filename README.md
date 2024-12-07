@@ -58,7 +58,7 @@ As compared to 'vanilla' Mastodon, with this repo and the original repo's commit
 
 - **PostgreSQL** 12+
 - **Redis** 4+
-- **Ruby** 3.1+
+- **Ruby** 3.2+
 - **Node.js** 18+
 
 The [**standalone** installation guide](https://docs.joinmastodon.org/admin/install/) is available on the Mastodon documentation website, and below, for ease of access:

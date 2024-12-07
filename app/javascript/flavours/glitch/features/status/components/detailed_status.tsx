@@ -21,6 +21,7 @@ import { Permalink } from 'flavours/glitch/components/permalink';
 import PictureInPicturePlaceholder from 'flavours/glitch/components/picture_in_picture_placeholder';
 import { useAppHistory } from 'flavours/glitch/components/router';
 import { VisibilityIcon } from 'flavours/glitch/components/visibility_icon';
+import PollContainer from 'flavours/glitch/containers/poll_container';
 import { useAppSelector } from 'flavours/glitch/store';
 
 import { Avatar } from '../../../components/avatar';
@@ -50,6 +51,7 @@ export const DetailedStatus: React.FC<{
   domain: string;
   showMedia?: boolean;
   withLogo?: boolean;
+  overrideDisplayName?: React.ReactNode;
   pictureInPicture: any;
   onToggleHidden?: (status: any) => void;
   onToggleMediaVisibility?: () => void;
@@ -64,6 +66,7 @@ export const DetailedStatus: React.FC<{
   domain,
   showMedia,
   withLogo,
+  overrideDisplayName,
   pictureInPicture,
   onToggleMediaVisibility,
   onToggleHidden,
@@ -194,6 +197,28 @@ export const DetailedStatus: React.FC<{
         )
     ) {
       media.push(<AttachmentList media={status.get('media_attachments')} />);
+    } else if (
+      ['image', 'gifv', 'unknown'].includes(
+        status.getIn(['media_attachments', 0, 'type']) as string,
+      ) ||
+      status.get('media_attachments').size > 1
+    ) {
+      media.push(
+        <MediaGallery
+          standalone
+          sensitive={status.get('sensitive')}
+          media={status.get('media_attachments')}
+          lang={language}
+          height={300}
+          letterbox={letterboxMedia}
+          fullwidth={fullwidthMedia}
+          hidden={!expanded}
+          onOpenMedia={onOpenMedia}
+          visible={showMedia}
+          onToggleVisibility={onToggleMediaVisibility}
+        />,
+      );
+      mediaIcons.push('picture-o');
     } else if (status.getIn(['media_attachments', 0, 'type']) === 'audio') {
       const attachment = status.getIn(['media_attachments', 0]);
       const description =
@@ -236,6 +261,7 @@ export const DetailedStatus: React.FC<{
           src={attachment.get('url')}
           alt={description}
           lang={language}
+          inline
           width={300}
           height={150}
           onOpenVideo={handleOpenVideo}
@@ -248,23 +274,6 @@ export const DetailedStatus: React.FC<{
         />,
       );
       mediaIcons.push('video-camera');
-    } else {
-      media.push(
-        <MediaGallery
-          standalone
-          sensitive={status.get('sensitive')}
-          media={status.get('media_attachments')}
-          lang={language}
-          height={300}
-          letterbox={letterboxMedia}
-          fullwidth={fullwidthMedia}
-          hidden={!expanded}
-          onOpenMedia={onOpenMedia}
-          visible={showMedia}
-          onToggleVisibility={onToggleMediaVisibility}
-        />,
-      );
-      mediaIcons.push('picture-o');
     }
   } else if (status.get('spoiler_text').length === 0) {
     media.push(
@@ -275,6 +284,18 @@ export const DetailedStatus: React.FC<{
       />,
     );
     mediaIcons.push('link');
+  }
+
+  if (status.get('poll')) {
+    contentMedia.push(
+      <PollContainer
+        pollId={status.get('poll')}
+        // @ts-expect-error -- Poll/PollContainer is not typed yet
+        status={status}
+        lang={status.get('language')}
+      />,
+    );
+    contentMediaIcons.push('tasks');
   }
 
   if (status.get('application')) {
@@ -359,7 +380,11 @@ export const DetailedStatus: React.FC<{
           <div className='detailed-status__display-avatar'>
             <Avatar account={status.get('account')} size={46} />
           </div>
-          <DisplayName account={status.get('account')} localDomain={domain} />
+
+          {overrideDisplayName ?? (
+            <DisplayName account={status.get('account')} localDomain={domain} />
+          )}
+
           {withLogo && (
             <>
               <div className='spacer' />
