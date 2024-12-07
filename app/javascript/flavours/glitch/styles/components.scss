@@ -1638,6 +1638,48 @@ body > [data-popper-placement] {
   }
 }
 
+.status.muted {opacity: 0.5}
+
+.status__wrapper.collapsed {
+  .status {
+    background-position: center;
+    background-size: cover;
+    user-select: none;
+    min-height: 0;
+  }
+
+  .display-name:hover .display-name__html {
+    text-decoration: none;
+  }
+
+  .status__content {
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 0;
+    mask-image: linear-gradient(rgb(0 0 0 / 100%), transparent);
+
+    a:hover {
+      text-decoration: none;
+    }
+  }
+
+  .notification__message {
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+}
+
+.notification__message-collapse-button {
+  text-align: end;
+  flex-grow: 2;
+
+  .status__collapse-button .icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 .status__relative-time {
   display: block;
   font-size: 14px;
