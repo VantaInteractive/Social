@@ -429,16 +429,36 @@ Here are some additional pages from the Mastodon Docs for quick reference:
 
 Mastodon is **free, open-source software** licensed under **AGPLv3**.
 
-You can open issues for bugs you've found or features you think are missing. You can also submit pull requests to this repository or submit translations using Crowdin. To get started, take a look at [CONTRIBUTING.md](CONTRIBUTING.md). If your contributions are accepted into Mastodon, you can request to be paid through [our OpenCollective](https://opencollective.com/mastodon).
+You can open issues for bugs you've found or features you think are missing. You
+can also submit pull requests to this repository or translations via Crowdin. To
+get started, look at the [CONTRIBUTING] and [DEVELOPMENT] guides. For changes
+accepted into Mastodon, you can request to be paid through our [OpenCollective].
 
-**IRC channel**: #mastodon on irc.libera.chat
+**IRC channel**: #mastodon on [`irc.libera.chat`](https://libera.chat)
 
 ## License
 
-Copyright (C) 2016-2024 Eugen Rochko & other Mastodon contributors (see [AUTHORS.md](AUTHORS.md))
+Copyright (c) 2016-2024 Eugen Rochko (+ [`mastodon authors`](AUTHORS.md))
 
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+Licensed under GNU Affero General Public License as stated in the [LICENSE](LICENSE):
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+```
+Copyright (c) 2016-2024 Eugen Rochko & other Mastodon contributors
 
-You should have received a copy of the GNU Affero General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU Affero General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+details.
+
+You should have received a copy of the GNU Affero General Public License along
+with this program. If not, see https://www.gnu.org/licenses/
+```
+
+[CONTRIBUTING]: CONTRIBUTING.md
+[DEVELOPMENT]: docs/DEVELOPMENT.md
+[OpenCollective]: https://opencollective.com/mastodon

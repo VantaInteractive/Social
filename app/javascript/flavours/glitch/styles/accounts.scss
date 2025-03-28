@@ -2,6 +2,8 @@
   font-family: 'Space Grotesk';
   font-weight: 600;
 }
+@use 'variables' as *;
+@use 'functions' as *;
 
 .card {
   & > a {

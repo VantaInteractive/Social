@@ -107,23 +107,26 @@ class Account < ApplicationRecord
   validates_with UniqueUsernameValidator, if: -> { will_save_change_to_username? }
 
   # Remote user validations, also applies to internal actors
-  validates :username, format: { with: USERNAME_ONLY_RE }, if: -> { (!local? || actor_type == 'Application') && will_save_change_to_username? }
+  validates :username, format: { with: USERNAME_ONLY_RE }, if: -> { (remote? || actor_type_application?) && will_save_change_to_username? }
 
   # Remote user validations
   validates :uri, presence: true, unless: :local?, on: :create
 
   # Local user validations
-  validates :username, format: { with: /\A[a-z0-9_]+\z/i }, length: { maximum: USERNAME_LENGTH_LIMIT }, if: -> { local? && will_save_change_to_username? && actor_type != 'Application' }
-  validates_with UnreservedUsernameValidator, if: -> { local? && will_save_change_to_username? && actor_type != 'Application' }
+  validates :username, format: { with: /\A[a-z0-9_]+\z/i }, length: { maximum: USERNAME_LENGTH_LIMIT }, if: -> { local? && will_save_change_to_username? && !actor_type_application? }
+  validates_with UnreservedUsernameValidator, if: -> { local? && will_save_change_to_username? && !actor_type_application? }
   validates :display_name, length: { maximum: DISPLAY_NAME_LENGTH_LIMIT }, if: -> { local? && will_save_change_to_display_name? }
   validates :note, note_length: { maximum: NOTE_LENGTH_LIMIT }, if: -> { local? && will_save_change_to_note? }
   validates :fields, length: { maximum: DEFAULT_FIELDS_SIZE }, if: -> { local? && will_save_change_to_fields? }
-  with_options on: :create do
-    validates :uri, absence: true, if: :local?
-    validates :inbox_url, absence: true, if: :local?
-    validates :shared_inbox_url, absence: true, if: :local?
-    validates :followers_url, absence: true, if: :local?
+  validates_with EmptyProfileFieldNamesValidator, if: -> { local? && will_save_change_to_fields? }
+  with_options on: :create, if: :local? do
+    validates :followers_url, absence: true
+    validates :inbox_url, absence: true
+    validates :shared_inbox_url, absence: true
+    validates :uri, absence: true
   end
+
+  validates :domain, exclusion: { in: [''] }
 
   normalizes :username, with: ->(username) { username.squish }
 
@@ -157,7 +160,7 @@ class Account < ApplicationRecord
     end
   }
   scope :dormant, -> { joins(:account_stat).merge(AccountStat.without_recent_activity) }
-  scope :with_username, ->(value) { where arel_table[:username].lower.eq(value.to_s.downcase) }
+  scope :with_username, ->(value) { value.is_a?(Array) ? where(arel_table[:username].lower.in(value.map { |x| x.to_s.downcase })) : where(arel_table[:username].lower.eq(value.to_s.downcase)) }
   scope :with_domain, ->(value) { where arel_table[:domain].lower.eq(value&.to_s&.downcase) }
   scope :without_memorial, -> { where(memorial: false) }
   scope :duplicate_uris, -> { select(:uri, Arel.star.count).group(:uri).having(Arel.star.count.gt(1)) }
@@ -192,6 +195,10 @@ class Account < ApplicationRecord
     domain.nil?
   end
 
+  def remote?
+    !domain.nil?
+  end
+
   def moved?
     moved_to_account_id.present?
   end
@@ -208,6 +215,10 @@ class Account < ApplicationRecord
 
   def bot=(val)
     self.actor_type = ActiveModel::Type::Boolean.new.cast(val) ? 'Service' : 'Person'
+  end
+
+  def actor_type_application?
+    actor_type == 'Application'
   end
 
   def group?
@@ -315,7 +326,7 @@ class Account < ApplicationRecord
 
     if attributes.is_a?(Hash)
       attributes.each_value do |attr|
-        next if attr[:name].blank?
+        next if attr[:name].blank? && attr[:value].blank?
 
         previous = old_fields.find { |item| item['value'] == attr[:value] }
 

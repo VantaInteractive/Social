@@ -1,4 +1,5 @@
-$no-columns-breakpoint: 600px;
+@use 'variables' as *;
+@use 'functions' as *;
 
 code {
   font-family: $font-monospace, monospace;
@@ -106,6 +107,21 @@ pre code::before {
   .input {
     margin-bottom: 16px;
     overflow: hidden;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &__toolbar {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      .character-counter {
+        flex: 0 0 auto;
+      }
+    }
 
     &.hidden {
       margin: 0;
@@ -357,10 +373,33 @@ pre code::before {
     columns: unset;
   }
 
-  .input.datetime .label_input select {
-    display: inline-block;
-    width: auto;
-    flex: 0;
+  .input.datetime .label_input,
+  .input.date .label_input {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+
+    select {
+      display: inline-block;
+      width: auto;
+      flex: 0;
+    }
+  }
+
+  .input.date_of_birth .label_input {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    input {
+      box-sizing: content-box;
+      width: 32px;
+      flex: 0;
+
+      &:last-child {
+        width: 64px;
+      }
+    }
   }
 
   .input.select.select--languages {
@@ -572,6 +611,7 @@ pre code::before {
   .actions {
     margin-top: 30px;
     display: flex;
+    gap: 10px;
 
     &.actions--top {
       margin-top: 0;
@@ -584,9 +624,7 @@ pre code::before {
     margin-bottom: 15px;
   }
 
-  button,
-  .button,
-  .block-button {
+  button:not(.button, .link-button, .help-button) {
     display: block;
     width: 100%;
     border: 0;
@@ -616,8 +654,9 @@ pre code::before {
       background-color: $ui-button-focus-background-color;
     }
 
+    &:disabled,
     &:disabled:hover {
-      background-color: $ui-primary-color;
+      background-color: $ui-button-disabled-color;
     }
 
     &.negative {
@@ -628,16 +667,6 @@ pre code::before {
       &:focus {
         background-color: $ui-button-destructive-focus-background-color;
       }
-    }
-  }
-
-  .button.button-tertiary {
-    padding: 9px;
-
-    &:hover,
-    &:focus,
-    &:active {
-      padding: 10px;
     }
   }
 
@@ -670,6 +699,18 @@ pre code::before {
   }
 
   .label_input {
+    position: relative;
+
+    &__loading-indicator {
+      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      inset-inline-start: 0;
+      border: 1px solid transparent;
+      padding: 10px 16px;
+      width: 100%;
+    }
+
     &__wrapper {
       position: relative;
     }
@@ -698,6 +739,10 @@ pre code::before {
         width: 5px;
       }
     }
+  }
+
+  .status-card {
+    contain: unset;
   }
 }
 
@@ -1205,6 +1250,7 @@ pre code::before {
   align-items: center;
   padding-bottom: 30px;
   margin-bottom: 30px;
+  color: $white;
 
   li {
     flex: 0 0 auto;
