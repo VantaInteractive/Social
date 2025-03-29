@@ -244,7 +244,6 @@ export const DetailedStatus: React.FC<{
           src={attachment.get('url')}
           alt={description}
           lang={language}
-          inline
           width={300}
           height={150}
           onOpenVideo={handleOpenVideo}
@@ -254,7 +253,6 @@ export const DetailedStatus: React.FC<{
           matchedFilters={status.get('matched_media_filters')}
           letterbox={letterboxMedia}
           fullwidth={fullwidthMedia}
-          preventPlayback={!expanded}
         />
       );
       mediaIcons.push('video-camera');
