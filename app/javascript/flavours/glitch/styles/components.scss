@@ -10078,7 +10078,8 @@ noscript {
       }
 
       p {
-        white-space: nowrap;
+        font-family: 'Space Mono', monospace;
+        white-space: wrap;
         overflow: hidden;
         text-overflow: ellipsis;
       }
@@ -10886,6 +10887,28 @@ noscript {
   .filter-warning {
     margin-inline-start: $icon-margin;
     width: calc(100% - $icon-margin);
+  }
+
+  /* Indicate media that is misisng ALT text with a red border
+  https://gist.github.com/FiXato/3de505b04efefd49a1e3568b70545234 */
+  .media-gallery__item-thumbnail img:not([alt]), 
+  .media-gallery__item-thumbnail img[alt|=""], 
+  .media-gallery__item-thumbnail img[alt^=" "],
+  .media-gallery__preview img:not([alt]),
+  .media-gallery__preview img[alt|=""],
+  .media-gallery__preview img[alt^=" "],
+  .audio-player__canvas:not([title]), 
+  .audio-player__canvas[title|=""], 
+  .audio-player__canvas[title^=" "], 
+  .video-player video:not([title]), 
+  .video-player video[title|=""], 
+  .video-player video[title^=" "],
+  .media-gallery__gifv video:not([title]), 
+  .media-gallery__gifv video[title|=""],
+  .media-gallery__gifv video[title^=" "] 
+  {
+      border: 8px dashed var(--danger);
+      box-sizing: border-box;
   }
 
   .more-from-author {
