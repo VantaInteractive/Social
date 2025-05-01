@@ -181,7 +181,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_22_085303) do
     t.integer "avatar_storage_schema_version"
     t.integer "header_storage_schema_version"
     t.integer "suspension_origin"
-    t.datetime "sensitized_at", precision: nil
     t.boolean "trendable"
     t.datetime "reviewed_at", precision: nil
     t.datetime "requested_review_at", precision: nil
