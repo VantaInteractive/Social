@@ -45,7 +45,7 @@
 
     &__box {
       padding: 16px;
-      border-radius: 8px;
+      border-radius: 0px;
       background: var(--indigo-2);
       color: var(--indigo-5);
     }
@@ -190,7 +190,7 @@
         display: block;
         width: 100%;
         height: auto;
-        border-radius: 8px;
+        border-radius: 0px;
       }
 
       &__label {
@@ -315,7 +315,7 @@
 .annual-report-modal {
   max-width: 600px;
   background: var(--indigo-1);
-  border-radius: 16px;
+  border-radius: 0px;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -326,7 +326,7 @@
 
   @media screen and (max-width: $no-columns-breakpoint) {
     border-bottom: 0;
-    border-radius: 16px 16px 0 0;
+    border-radius: 0px;
   }
 }
 

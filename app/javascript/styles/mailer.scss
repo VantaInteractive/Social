@@ -72,12 +72,12 @@ table + p {
 .email-inner-card-table {
   border-collapse: separate;
   width: 100%;
-  border-radius: 12px;
+  border-radius: 0px;
 }
 
 .email-inner-card-td-without-padding,
 .email-inner-card-td {
-  border-radius: 12px;
+  border-radius: 0px;
   overflow: hidden;
   box-shadow: 0 4px 16px 0 rgba(23, 6, 59, 8%);
   background-color: #fff;
@@ -117,7 +117,7 @@ table + p {
   width: auto;
   margin: 0;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 0px;
   border-collapse: separate;
   background-color: #fff;
   border: 2px solid #fff;
@@ -126,7 +126,7 @@ table + p {
     display: block;
     max-width: 100%;
     border: none;
-    border-radius: 6px;
+    border-radius: 0px;
   }
 }
 
@@ -321,7 +321,7 @@ table + p {
   img {
     width: 56px;
     height: 56px;
-    border-radius: 12px;
+    border-radius: 0px;
   }
 }
 
@@ -355,7 +355,7 @@ table + p {
   width: 100%;
   border-collapse: separate;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 0px;
   background-color: #fff;
   border: 2px solid #fff;
   box-shadow: 0 4px 16px 0 rgba(23, 6, 59, 8%);
@@ -367,7 +367,7 @@ table + p {
 }
 
 .email-header-card-banner-td {
-  border-radius: 12px 12px 0 0;
+  border-radius: 0px;
   width: 236px;
   height: 80px;
   background-color: #f3f2f5 !important;
@@ -518,7 +518,7 @@ table + p {
   margin: 0;
   max-width: 100%;
   border-collapse: separate;
-  border-radius: 8px;
+  border-radius: 0px;
   background-color: #6364ff;
 }
 
@@ -531,7 +531,7 @@ table + p {
 
 .email-btn-a {
   display: block;
-  border-radius: 8px;
+  border-radius: 0px;
   padding-left: 35px;
   padding-right: 35px;
   padding-top: 10px;
@@ -554,7 +554,7 @@ table + p {
   img {
     width: 48px;
     height: 48px;
-    border-radius: 8px;
+    border-radius: 0px;
     overflow: hidden;
   }
 }
@@ -630,7 +630,7 @@ table + p {
   color: #17063b;
 
   img {
-    border-radius: 8px;
+    border-radius: 0px;
   }
 
   a {
@@ -662,7 +662,7 @@ table + p {
 // Purple frame for emphasis
 .email-frame-table {
   background-color: #efefff;
-  border-radius: 8px;
+  border-radius: 0px;
 }
 
 .email-frame-td {
@@ -685,7 +685,7 @@ table + p {
 }
 
 .email-checklist-table {
-  border-radius: 12px;
+  border-radius: 0px;
   border-width: 1px;
   border-style: solid;
   border-color: #efefff;
@@ -813,7 +813,7 @@ table + p {
 }
 
 .email-mini-td {
-  border-radius: 12px;
+  border-radius: 0px;
   border: 1px solid #e8e6eb;
   background-color: #fff;
   padding: 15px 16px;
@@ -824,7 +824,7 @@ table + p {
   vertical-align: top;
 
   img {
-    border-radius: 8px;
+    border-radius: 0px;
   }
 }
 
@@ -912,7 +912,7 @@ table + p {
   img {
     width: 16px;
     height: 16px;
-    border-radius: 50%;
+    border-radius: 0%;
     max-width: none;
     border: 2px solid #fff;
     vertical-align: middle;
@@ -947,7 +947,7 @@ table + p {
   padding: 24px;
   background-color: #fff;
   border: 1px solid #e8e6eb;
-  border-radius: 12px;
+  border-radius: 0px;
 }
 
 // Responsive
@@ -958,11 +958,11 @@ table + p {
   }
 
   .email-desktop-rounded-16px {
-    border-radius: 16px !important;
+    border-radius: 0px !important;
   }
 
   .email-header-td {
-    border-radius: 16px 16px 0 0 !important;
+    border-radius: 0px !important;
   }
 
   .email-desktop-flex {

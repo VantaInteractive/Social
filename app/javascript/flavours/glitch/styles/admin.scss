@@ -825,7 +825,7 @@ a.name-tag,
     display: block;
     margin: 0;
     margin-inline-end: 5px;
-    border-radius: 50%;
+    border-radius: 0%;
   }
 
   &.suspended {
@@ -1945,7 +1945,7 @@ a.sparkline {
 
 .status__card {
   padding: 15px;
-  border-radius: 4px;
+  border-radius: 0px;
   background: $ui-base-color;
   font-size: 15px;
   line-height: 20px;
@@ -1975,7 +1975,7 @@ a.sparkline {
   &__terms-of-service {
     &__container {
       background: var(--surface-background-color);
-      border-radius: 8px;
+      border-radius: 0px;
       border: 1px solid var(--background-border-color);
       overflow: hidden;
 
@@ -2036,7 +2036,7 @@ a.sparkline {
     display: inline-block;
     width: 8px;
     height: 8px;
-    border-radius: 50%;
+    border-radius: 0%;
     background: $dark-text-color;
   }
 

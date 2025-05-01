@@ -155,7 +155,7 @@ $emojis-requiring-inversion: 'back' 'copyright' 'curly_loop' 'currency_exchange'
   --surface-background-color: #{darken($ui-base-color, 4%)};
   --surface-variant-background-color: #{$ui-base-color};
   --surface-variant-active-background-color: #{lighten($ui-base-color, 4%)};
-  --avatar-border-radius: 8px;
+  --avatar-border-radius: 0px;
 }
 // Avatar border size (8% default, 100% for rounded avatars)
 $ui-avatar-border-size: 0%;
