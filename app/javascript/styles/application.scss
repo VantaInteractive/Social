@@ -4,8 +4,8 @@
 @use 'mastodon/css_variables';
 @use 'fonts/roboto';
 @use 'fonts/roboto-mono';
-@import 'fonts/space-grotesk';
-@import 'fonts/space-mono';
+@use 'fonts/space-grotesk';
+@use 'fonts/space-mono';
 
 @use 'mastodon/reset';
 @use 'mastodon/basics';

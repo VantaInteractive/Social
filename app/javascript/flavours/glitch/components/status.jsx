@@ -460,6 +460,7 @@ class Status extends ImmutablePureComponent {
       identity,
       ...other
     } = this.props;
+    const { isCollapsed } = this.state;
     let attachments = null;
 
     let media = [];
@@ -694,7 +695,7 @@ class Status extends ImmutablePureComponent {
           {!skipPrepend && prepend}
 
           <div
-            className={classNames('status', `status-${status.get('visibility')}`, { 'status-reply': !!status.get('in_reply_to_id'), 'status--in-thread': !!rootId, 'status--first-in-thread': previousId && (!connectUp || connectToRoot), muted: this.props.muted })}
+            className={classNames('status', `status-${status.get('visibility')}`, { 'status-reply': !!status.get('in_reply_to_id'), 'status--in-thread': !!rootId, 'status--first-in-thread': previousId && (!connectUp || connectToRoot), muted: this.props.muted, collapsed: isCollapsed })}
             data-id={status.get('id')}
           >
             {(connectReply || connectUp || connectToRoot) && <div className={classNames('status__line', { 'status__line--full': connectReply, 'status__line--first': !status.get('in_reply_to_id') && !connectToRoot })} />}

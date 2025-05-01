@@ -5,6 +5,11 @@
 @use 'variables' as *;
 @use 'functions' as *;
 
+.app-body .account__header__tabs__name h1 {
+  font-family: 'Space Grotesk';
+  font-weight: 600;
+}
+
 .card {
   & > a {
     display: block;

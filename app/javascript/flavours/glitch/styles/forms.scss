@@ -87,7 +87,7 @@ pre code::before {
   justify-content: center;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 0%;
   color: $primary-text-color;
 
   &.success {
@@ -1272,7 +1272,7 @@ pre code::before {
     position: relative;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
+    border-radius: 0%;
     border: 2px solid $ui-base-lighter-color;
     flex: 0 0 auto;
     display: flex;
@@ -1317,7 +1317,7 @@ pre code::before {
       content: '';
       width: 10px;
       height: 10px;
-      border-radius: 50%;
+      border-radius: 0%;
       background: $highlight-text-color;
       position: absolute;
       left: 50%;

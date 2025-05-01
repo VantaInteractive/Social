@@ -59,7 +59,7 @@
   background: $ui-button-background-color;
   border: 0;
   color: $ui-button-color;
-  border-radius: 20px;
+  border-radius: 0px;
   cursor: pointer;
   width: 24px;
   height: 24px;
@@ -123,7 +123,7 @@
     line-height: normal;
     font-weight: 700;
     padding: 5px 12px;
-    border-radius: 4px;
+    border-radius: 0px;
   }
 
   &--dangerous {
@@ -716,7 +716,7 @@ body > [data-popper-placement] {
 
     &.overlay {
       height: 100%;
-      border-radius: 8px;
+      border-radius: 0px;
       pointer-events: none;
     }
 
@@ -778,7 +778,7 @@ body > [data-popper-placement] {
 
     .icon-button.compose-form__upload__delete {
       padding: 2px;
-      border-radius: 50%;
+      border-radius: 0%;
 
       .icon {
         width: 20px;
@@ -1641,6 +1641,48 @@ body > [data-popper-placement] {
   }
 }
 
+.status.muted {opacity: 0.5}
+
+.status__wrapper.collapsed {
+  .status {
+    background-position: center;
+    background-size: cover;
+    user-select: none;
+    min-height: 0;
+  }
+
+  .display-name:hover .display-name__html {
+    text-decoration: none;
+  }
+
+  .status__content {
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 0;
+    mask-image: linear-gradient(rgb(0 0 0 / 100%), transparent);
+
+    a:hover {
+      text-decoration: none;
+    }
+  }
+
+  .notification__message {
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+}
+
+.notification__message-collapse-button {
+  text-align: end;
+  flex-grow: 2;
+
+  .status__collapse-button .icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 .status__relative-time {
   display: block;
   font-size: 14px;
@@ -2066,7 +2108,7 @@ body > [data-popper-placement] {
           display: flex;
           align-items: center;
           justify-content: center;
-          border-radius: 50%;
+          border-radius: 0%;
           flex-shrink: 0;
         }
 
@@ -2552,7 +2594,7 @@ a.account__display-name {
     height: auto;
     outline: 1px solid var(--media-outline-color);
     outline-offset: -1px;
-    border-radius: 8px;
+    border-radius: 0px;
     touch-action: none;
   }
 
@@ -2581,7 +2623,7 @@ a.account__display-name {
     z-index: 1;
     outline: 1px solid var(--media-outline-color);
     outline-offset: -1px;
-    border-radius: 8px;
+    border-radius: 0px;
     overflow: hidden;
 
     canvas {
@@ -2798,7 +2840,7 @@ a.account__display-name {
 
   .account__avatar {
     margin-inline-end: 5px;
-    border-radius: 50%;
+    border-radius: 0%;
   }
 
   strong {
@@ -3300,7 +3342,7 @@ $ui-header-logo-wordmark-width: 99px;
     bottom: 1px;
     display: block;
     background: $error-red;
-    border-radius: 50%;
+    border-radius: 0%;
     width: 0.625rem;
     height: 0.625rem;
   }
@@ -4182,7 +4224,7 @@ a.status-card {
   text-decoration: none;
 
   &:hover {
-    background: var(--on-surface-color);
+    background: $transparent;
   }
 
   .icon {
@@ -5414,7 +5456,7 @@ a.status-card {
   inset-inline-end: -0.25em;
   top: -0.25em;
   background-color: $ui-highlight-color;
-  border-radius: 50%;
+  border-radius: 0%;
   font-size: 75%;
   width: 1em;
   height: 1em;
@@ -6078,7 +6120,7 @@ a.status-card {
   opacity: 0.4;
   height: 6px;
   width: 6px;
-  border-radius: 50%;
+  border-radius: 0%;
   margin: 0 4px;
   padding: 0;
   border: 0;
@@ -6102,7 +6144,7 @@ a.status-card {
   background: var(--modal-background-color);
   backdrop-filter: var(--background-filter);
   border: 1px solid var(--modal-border-color);
-  border-radius: 16px;
+  border-radius: 0px;
 
   &__error {
     padding: 24px;
@@ -6414,7 +6456,7 @@ a.status-card {
       .gifv video {
         outline: 1px solid var(--media-outline-color);
         outline-offset: -1px;
-        border-radius: 8px;
+        border-radius: 0px;
       }
 
       img,
@@ -6434,7 +6476,7 @@ a.status-card {
     box-shadow: var(--dropdown-shadow);
     max-width: 320px;
     padding: 16px;
-    border-radius: 8px;
+    border-radius: 0px;
     z-index: 9999 !important;
     font-size: 14px;
     line-height: 20px;
@@ -7633,7 +7675,7 @@ img.modal-warning {
     &__handle {
       position: absolute;
       z-index: 3;
-      border-radius: 50%;
+      border-radius: 0%;
       width: 12px;
       height: 12px;
       top: 50%;
@@ -7705,7 +7747,7 @@ img.modal-warning {
       position: absolute;
       z-index: 3;
       opacity: 0;
-      border-radius: 50%;
+      border-radius: 0%;
       width: 12px;
       height: 12px;
       top: 10px;
@@ -7738,7 +7780,7 @@ img.modal-warning {
     background: rgba($base-shadow-color, 0.45);
     backdrop-filter: var(--background-filter);
     color: $white;
-    border-radius: 8px;
+    border-radius: 0px;
     padding: 16px 24px;
     display: flex;
     flex-direction: column;
@@ -7920,7 +7962,7 @@ img.modal-warning {
     width: 20px;
     height: 20px;
     flex: 0 0 auto;
-    border-radius: 50%;
+    border-radius: 0%;
 
     &.checked,
     &.indeterminate {
@@ -7937,7 +7979,7 @@ img.modal-warning {
 .radio-button__input.checked::before {
   content: '';
   display: block;
-  border-radius: 50%;
+  border-radius: 0%;
   width: calc(100% - 4px);
   height: calc(100% - 4px);
   background: $ui-highlight-color;
@@ -8152,7 +8194,7 @@ noscript {
     height: 100px;
     transform: translate(-50%, -50%);
     border: 2px solid #fff;
-    border-radius: 50%;
+    border-radius: 0%;
     box-shadow: 0 0 0 9999em rgba($base-shadow-color, 0.35);
     pointer-events: none;
   }
@@ -8675,7 +8717,7 @@ noscript {
   &__unread {
     display: inline-block;
     background: $highlight-text-color;
-    border-radius: 50%;
+    border-radius: 0%;
     width: 0.625rem;
     height: 0.625rem;
     margin: -0.1ex 0.15em 0.1ex;
@@ -8780,7 +8822,7 @@ noscript {
       inset-inline-end: 19px;
       display: block;
       background: $highlight-text-color;
-      border-radius: 50%;
+      border-radius: 0%;
       width: 0.625rem;
       height: 0.625rem;
     }
@@ -9646,7 +9688,7 @@ noscript {
     content: '';
     position: absolute;
     background-color: $darker-text-color;
-    border-radius: 50%;
+    border-radius: 0%;
     width: 0.375em;
     height: 0.375em;
     top: 0.5em;
@@ -10259,7 +10301,7 @@ noscript {
 
       .icon-button {
         border: 1px solid var(--background-border-color);
-        border-radius: 4px;
+        border-radius: 0px;
         box-sizing: content-box;
         padding: 5px;
 
@@ -10360,7 +10402,7 @@ noscript {
       }
 
       &__icon {
-        border-radius: 50%;
+        border-radius: 0%;
         background: $ui-highlight-color;
         display: flex;
         align-items: center;
@@ -10540,7 +10582,7 @@ noscript {
   &__badge {
     background: $ui-button-background-color;
     color: $white;
-    border-radius: 100px;
+    border-radius: 0px;
     padding: 2px 8px;
   }
 }
@@ -10634,7 +10676,7 @@ noscript {
     cursor: pointer;
 
     &:hover {
-      background: var(--on-surface-color);
+      background: $transparent;
     }
 
     .notification-request__checkbox {
@@ -10748,7 +10790,7 @@ noscript {
 
     .icon-button {
       border: 1px solid var(--background-border-color);
-      border-radius: 50%;
+      border-radius: 0%;
       padding: 1px;
     }
   }
@@ -11169,7 +11211,7 @@ noscript {
   background: rgba($ui-highlight-color, 0.05);
   color: $secondary-text-color;
   border: 1px solid rgba($ui-highlight-color, 0.15);
-  border-radius: 8px;
+  border-radius: 0px;
   padding: 8px (5px + 8px);
   position: relative;
   font-size: 15px;
@@ -11271,7 +11313,7 @@ noscript {
     padding: 12px;
     font-size: 16px;
     line-height: normal;
-    border-radius: 4px;
+    border-radius: 0px;
     display: block;
     flex: 1 1 auto;
 

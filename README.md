@@ -17,30 +17,6 @@ VantaInteractive/Social is a fork of [Mastodon Glitch Edition](https://github.co
 - [Browse Mastodon servers](https://joinmastodon.org/communities)
 - [Browse Mastodon apps](https://joinmastodon.org/apps)
 
-## Features
-As compared to 'vanilla' Mastodon, with this repo and the original repo's commit hashes:
-#### From Mastodon upstream
-- ADDED: [Change design of confirmation modals in web UI #30884](https://github.com/mastodon/mastodon/pull/30884)
-- ADDED: [Replace more font-awesome icons in views/settings #30963](https://github.com/mastodon/mastodon/pull/30963)
-- ADDED: [Replace more font-awesome icons in navigation sidebar area #30974](https://github.com/mastodon/mastodon/pull/30974)
-- ADDED: [Add missing Appeals link under Moderation in navigiation #31071](https://github.com/mastodon/mastodon/pull/31071)
-- ADDED (was merged to Glitch Edition while editing the README.md for the first time): Grouped Notifications UI
-
-#### From Mastodon Glitch Edition
-- REMOVED: Doodle
-
-#### From kiyo.social
-- ADDED: Jit.si integration
-
-#### From TheEssem/Mastodon
-- ADDED: [Emoji reactions](https://github.com/glitch-soc/mastodon/pull/2462) and [allowing dashes in emoji shortcodes](https://github.com/TheEssem/mastodon/commit/c5d084f11ab0f66aa039020d6fb8d2ad0c064d53#diff-f9a445238e0976bb929a67c223f33906304867e27d24e4de79c7421e8d48101dR30)
-- ADDED: [Bubble timeline](https://github.com/TheEssem/mastodon/tree/feature/bubble-timeline)
-
-#### VantaInteractive/Social additions
-- ADDED: More sharp Material Symbols icons changes in the interface, for a more unified and coherent design that works well with Obsidian Design
-- ADDED: Markdown guide
-- ADDED: Design similar to the Obsidian Design system used in places such as the [AlexTECPlayz website](https://alextecplayz.github.io) or [carbon](https://github.com/VantaInteractive/carbon)
-
 ## Deployment
 
 ### Tech stack
@@ -54,7 +30,7 @@ As compared to 'vanilla' Mastodon, with this repo and the original repo's commit
 - **PostgreSQL** 12+
 - **Redis** 4+
 - **Ruby** 3.2+
-- **Node.js** 18+
+- **Node.js** 22+
 
 The [**standalone** installation guide](https://docs.joinmastodon.org/admin/install/) is available on the Mastodon documentation website, and below, for ease of access:
 

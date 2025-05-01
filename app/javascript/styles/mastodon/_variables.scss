@@ -12,6 +12,8 @@ $blurple-400: #7477fd; // Medium slate blue
 $blurple-300: #858afa; // Faded Blue
 $grey-600: hsl(240deg, 8%, 33%); // Trout
 $grey-100: hsl(240deg, 51%, 90%); // Topaz
+
+// Obsidian Design
 $darkgray: #3b3b3b;
 $lightgray: #c4c4c4;
 $transparent: #00000000;
@@ -163,3 +165,27 @@ $emojis-requiring-inversion: 'back' 'copyright' 'curly_loop' 'currency_exchange'
   'end' 'heavy_check_mark' 'heavy_division_sign' 'heavy_dollar_sign'
   'heavy_minus_sign' 'heavy_multiplication_x' 'heavy_plus_sign' 'on'
   'registered' 'soon' 'spider' 'telephone_receiver' 'tm' 'top' 'wavy_dash' !default;
+
+// Avatar border size (8% default, 100% for rounded avatars)
+$ui-avatar-border-size: 0%;
+
+// More variables
+$dismiss-overlay-width: 4rem;
+
+:root {
+  --dropdown-border-color: #{lighten($ui-base-color, 4%)};
+  --dropdown-background-color: #{rgba(darken($ui-base-color, 8%), 0.9)};
+  --dropdown-shadow: 0 20px 25px -5px #{rgba($base-shadow-color, 0.25)},
+    0 8px 10px -6px #{rgba($base-shadow-color, 0.25)};
+  --modal-background-color: #{rgba(darken($ui-base-color, 8%), 0.7)};
+  --modal-background-variant-color: #{rgba($ui-base-color, 0.7)};
+  --modal-border-color: #{lighten($ui-base-color, 4%)};
+  --background-border-color: #{lighten($ui-base-color, 4%)};
+  --background-filter: blur(10px) saturate(180%) contrast(75%) brightness(70%);
+  --background-color: #242424;
+  --background-color-tint: #{rgba(darken($ui-base-color, 8%), 0.9)};
+  --surface-background-color: #{darken($ui-base-color, 4%)};
+  --surface-variant-background-color: #{$ui-base-color};
+  --surface-variant-active-background-color: #{lighten($ui-base-color, 4%)};
+  --avatar-border-radius: 0px;
+}

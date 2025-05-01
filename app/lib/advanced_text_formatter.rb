@@ -9,7 +9,7 @@ class AdvancedTextFormatter < TextFormatter
 
     def block_code(code, language)
       <<~HTML
-        <pre><code data-codelang="#{language}">#{ERB::Util.h(code.rstrip).gsub("\n", '</code></br><code>')}</code></pre>
+        <pre><code>#{ERB::Util.h(code.rstrip).gsub("\n", '</code></br><code>')}</code></pre>
       HTML
     end
 
