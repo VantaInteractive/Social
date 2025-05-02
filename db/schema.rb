@@ -575,11 +575,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_28_095029) do
     t.datetime "expires_at", precision: nil
     t.inet "ip", default: "0.0.0.0", null: false
     t.integer "severity", default: 0, null: false
-    t.datetime "expires_at", precision: nil
     t.text "comment", default: "", null: false
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.index ["ip"], name: "index_ip_blocks_on_ip", unique: true
   end
 
   create_table "list_accounts", force: :cascade do |t|
