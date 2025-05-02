@@ -19,6 +19,6 @@ module BrandingHelper
   end
 
   def render_logo
-    image_tag(frontend_asset_path('images/logo.svg'), alt: 'Mastodon', class: 'logo logo--icon')
+    image_tag(frontend_asset_path('images/VantaSocial.svg'), alt: 'The Vanta Social logo', class: 'logo logo--icon')
   end
 end
