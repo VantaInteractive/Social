@@ -2052,7 +2052,7 @@ body > [data-popper-placement] {
     padding: 4px 8px;
 
     &.active {
-      color: $white;
+      color: $darkgray;
       background: $ui-highlight-color;
     }
 
@@ -2086,7 +2086,7 @@ body > [data-popper-placement] {
           width: 40px;
           height: 40px;
           background: $ui-highlight-color;
-          color: $white;
+          color: $darkgray;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -4574,6 +4574,7 @@ a.status-card {
 
     &.active {
       background-color: darken($ui-highlight-color, 2%);
+      color: $darkgray;
 
       &:hover,
       &:focus {
