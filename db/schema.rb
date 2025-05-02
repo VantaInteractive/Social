@@ -180,6 +180,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_22_085303) do
     t.boolean "hide_collections"
     t.integer "avatar_storage_schema_version"
     t.integer "header_storage_schema_version"
+    t.datetime "sensitized_at", precision: nil
     t.integer "suspension_origin"
     t.boolean "trendable"
     t.datetime "reviewed_at", precision: nil
