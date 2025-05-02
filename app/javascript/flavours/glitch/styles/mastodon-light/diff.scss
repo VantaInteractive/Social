@@ -4,6 +4,12 @@
 @use '../functions' as *;
 @use '../variables' as *;
 
+.simple form .recommended {
+  background-color: #ffe791 !important;
+  border-color: #ffe791 !important;
+  color: #937500 !important;
+}
+
 .simple_form .button.button-tertiary {
   color: $highlight-text-color;
 

@@ -1,19 +1,9 @@
 @use 'sass:color';
 @use 'functions' as *;
 
-// Commonly used web colors
+// Obsidian Design
 $black: #000000; // Black
 $white: #ffffff; // White
-$red-600: #b7253d !default; // Deep Carmine
-$red-500: #df405a !default; // Cerise
-$blurple-600: #563acc; // Iris
-$blurple-500: #6364ff; // Brand purple
-$blurple-400: #7477fd; // Medium slate blue
-$blurple-300: #858afa; // Faded Blue
-$grey-600: hsl(240deg, 8%, 33%); // Trout
-$grey-100: hsl(240deg, 51%, 90%); // Topaz
-
-// Obsidian Design
 $darkgray: #3b3b3b;
 $lightgray: #c4c4c4;
 $transparent: #00000000;
