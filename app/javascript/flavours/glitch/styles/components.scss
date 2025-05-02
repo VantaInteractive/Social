@@ -3898,9 +3898,9 @@ $ui-header-logo-wordmark-width: 99px;
 
   kbd {
     display: inline-block;
-    padding: 3px 5px;
-    background-color: lighten($ui-base-color, 8%);
-    border: 1px solid darken($ui-base-color, 4%);
+    padding: 3px 0px;
+    background-color: none !important;
+    border: none !important;
   }
 }
 
