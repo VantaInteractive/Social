@@ -20,6 +20,10 @@ function rgbToHex(rgb) {
 	return `#${hex}`;
 }
 
+function rgbToRgba(rgb, alpha) {
+    return rgb.replace('rgb', 'rgba').replace(')', `, ${alpha})`);
+}
+
 function getDominantColor(imageSrc, callback) {
 	const img = new Image();
 	img.src = imageSrc;
@@ -62,38 +66,40 @@ function getDominantColor(imageSrc, callback) {
 }
 
 ready(() => {
-  // Running all VISoc code after the page is ready
+  	// Running all VISoc code after the page is ready
 
-  // Set account page accent color based on presence of a colored role or profile picture
-  const checkAccountRole = (attempt) => {
-      const accountRole = document.querySelector('.account-role[data-account-role-id]');
-      if (accountRole) {
-          console.log("Applying custom accent color based on role color");
-          const computedStyle = getComputedStyle(accountRole);
-          const accountAccentColor = computedStyle.color;
-          const accountAccentColorHex = rgbToHex(accountAccentColor);
-          document.documentElement.style.setProperty('--accent', accountAccentColorHex);
-		  document.documentElement.style.setProperty('--account-accent', accountAccentColorHex);
-      } else if (attempt < 4) { // Retry up to 4 times (0, 500, 1000, 1500, 2000)
-          const delay = attempt * 500; // 0, 500, 1000, 1500, 2000
-          setTimeout(() => checkAccountRole(attempt + 1), delay);
-      } else {
-          console.log("No data-account-role-id found after multiple attempts. Extracting dominant color from profile picture.");
-          const avatarImg = document.querySelector('.account__avatar img');
-          if (avatarImg) {
-              getDominantColor(avatarImg.src, (dominantColor) => {
-                  if (dominantColor) {
-                      const dominantColorHex = rgbToHex(dominantColor);
-                      document.documentElement.style.setProperty('--accent', dominantColorHex);
-					  document.documentElement.style.setProperty('--account-accent', dominantColorHex);
-                  } else {
-                      console.log("Failed to extract dominant color from the profile picture.");
-                  }
-              });
-          } else {
-              console.log("No profile picture found.");
-          }
-      }
+  	// Set account page accent color based on presence of a colored role or profile picture
+  	const checkAccountRole = (attempt) => {
+	const accountRole = document.querySelector('.account-role[data-account-role-id]');
+		if (accountRole) {
+          	console.log("Applying custom accent color based on role color");
+          	const computedStyle = getComputedStyle(accountRole);
+          	const accountAccentColor = computedStyle.color;
+          	const accountAccentColorHex = rgbToHex(accountAccentColor);
+          	document.documentElement.style.setProperty('--accent', accountAccentColorHex);
+			const rgbaColor = rgbToRgba(accountAccentColor, 0.15);
+		  	document.documentElement.style.setProperty('--account-accent', rgbaColor);
+    	} else if (attempt < 4) { // Retry up to 4 times (0, 500, 1000, 1500, 2000)
+    	    const delay = attempt * 500; // 0, 500, 1000, 1500, 2000
+    	    setTimeout(() => checkAccountRole(attempt + 1), delay);
+    	} else {
+          	console.log("No data-account-role-id found after multiple attempts. Extracting dominant color from profile picture.");
+    		const avatarImg = document.querySelector('.account__avatar img');
+        	if (avatarImg) {
+        		getDominantColor(avatarImg.src, (dominantColor) => {
+                	if (dominantColor) {
+                		const dominantColorHex = rgbToHex(dominantColor);
+                      	document.documentElement.style.setProperty('--accent', dominantColorHex);
+					  	const rgbaColor = rgbToRgba(dominantColor, 0.15);
+                    	document.documentElement.style.setProperty('--account-accent', rgbaColor);
+                  	} else {
+                    	console.log("Failed to extract dominant color from the profile picture.");
+                  	}
+            	});
+          	} else {
+          	    console.log("No profile picture found.");
+          	}
+      	}
   };
 
   checkAccountRole(0);
