@@ -171,6 +171,8 @@ $dismiss-overlay-width: 4rem;
   --caution: #{$caution};
   --success: #{success};
   --accent: #{$warning};
+
+  --account-accent: var(--background-color);
 }
 
 $emojis-requiring-inversion: 'back' 'copyright' 'curly_loop' 'currency_exchange'
