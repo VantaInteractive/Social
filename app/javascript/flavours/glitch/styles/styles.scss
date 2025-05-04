@@ -9,7 +9,7 @@
 scrollbar slider {background-color: var(--modal-background-color) !important;}
 .navigation-panel__legal, .search-page .search, .navigation-panel.navigation-panel hr {display: block;}
 .account__header__tabs__buttons:not(.radio-button__input):not(span) {border-color: var(--lightgray) !important;}
-.columns-area__panels__main .column .scrollable {background: #{rgba(var(--account-accent), 0.15)};}
+.columns-area__panels__main .column .scrollable {background: var(--account-accent);}
 
 /* ============ MastoModern fork below ============ */
 /* Source: https://git.gay/freeplay/Mastodon-Modern */
@@ -1813,7 +1813,7 @@ scrollbar slider {background-color: var(--modal-background-color) !important;}
   }
   .account__header__bar::before {
     content: "";
-    background: #{rgba(var(--account-accent), 0.15)};
+    background: var(--account-accent);
     position: absolute;
     inset: 0;
     pointer-events: none;
