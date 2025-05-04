@@ -87,8 +87,8 @@ ready(() => {
             document.documentElement.style.setProperty('--accent', accountAccentColorHex);
             const rgbaColor = rgbToRgba(accountAccentColor, 0.15);
             document.documentElement.style.setProperty('--account-accent', rgbaColor);
-        } else if (attempt < 21) { // Number of retries
-            const delay = attempt * 100; // Delay in ms
+        } else if (attempt < 6) { // Number of retries
+            const delay = attempt * 250; // Delay in ms
             setTimeout(() => checkAccountRole(attempt + 1), delay);
         } else {
             console.log("No data-account-role-id found after multiple attempts. Extracting dominant color from profile picture.");
@@ -105,9 +105,9 @@ ready(() => {
                     document.documentElement.style.setProperty('--accent', dominantColorHex);
                     const rgbaColor = rgbToRgba(dominantColor, 0.15);
                     document.documentElement.style.setProperty('--account-accent', rgbaColor);
-                } else if (attempt < 21) {
+                } else if (attempt < 11) {
                     console.log("Failed to extract dominant color. Retrying...");
-                    const delay = attempt * 100;
+                    const delay = attempt * 250;
                     setTimeout(() => checkProfilePicture(attempt + 1), delay);
                 } else {
                     console.log("Failed to extract dominant color from the profile picture after multiple attempts.");
