@@ -7,6 +7,8 @@
 .column-header__buttons button {border-radius: 0px !important;}
 .compose-form__highlightable .compose-form__buttons button {padding: 8px 14px;}
 scrollbar slider {background-color: var(--modal-background-color) !important;}
+.navigation-panel__legal, .search-page .search, .navigation-panel.navigation-panel hr {display: block;}
+.account__header__tabs__buttons:not(.radio-button__input):not(span) {border-color: var(--lightgray) !important;}
 
 /* ============ MastoModern fork below ============ */
 /* Source: https://git.gay/freeplay/Mastodon-Modern */
@@ -1811,7 +1813,7 @@ scrollbar slider {background-color: var(--modal-background-color) !important;}
   }
   .account__header__bar::before {
     content: "";
-    background: var(--elevated-tint);
+    background: none;
     position: absolute;
     inset: 0;
     pointer-events: none;
@@ -1821,10 +1823,10 @@ scrollbar slider {background-color: var(--modal-background-color) !important;}
     position: absolute;
     inset-inline: 0;
     height: 95px;
-    background: inherit;
+    background: none;
     z-index: -1;
     border-radius: var(--radius);
-    mask: linear-gradient(to bottom, transparent, #000);
+    -webkit-mask: none;
   }
   .account__header__tabs {
     overflow: visible !important;
@@ -1840,7 +1842,7 @@ scrollbar slider {background-color: var(--modal-background-color) !important;}
     inset-inline: 0;
     height: 150px;
     backdrop-filter: blur(40px);
-    filter: brightness(1.1);
+    filter: none;
     pointer-events: none;
     opacity: 0.7;
     z-index: -2;

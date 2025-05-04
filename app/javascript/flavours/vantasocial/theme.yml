@@ -1,7 +1,0 @@
-pack_directory: app/javascript/flavours/vantasocial/entrypoints
-signed_in_preload:
-  - flavours/vantasocial/async/compose.js
-  - flavours/vantasocial/async/home_timeline.js
-  - flavours/vantasocial/async/notifications.js
-locales: locales
-screenshot: flavours/vantasocial/images/vantasocial-preview.png

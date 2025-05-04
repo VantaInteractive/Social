@@ -1,8 +1,0 @@
-en:
-  flavours:
-    vantasocial:
-      description: The theme used by Vanta Social. It supports all of the features of GlitchSoc.
-      name: Vanta Social Edition
-  skins:
-    vantasocial:
-      default: Default

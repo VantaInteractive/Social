@@ -56,7 +56,7 @@
 }
 
 .help-button {
-  background: $ui-button-background-color;
+  background: var(--accent);
   border: 0;
   color: $ui-button-color;
   border-radius: 0px;
@@ -84,7 +84,7 @@
 }
 
 .button {
-  background-color: $ui-button-background-color;
+  background-color: var(--accent);
   border: 10px none;
   border-radius: 0px;
   box-sizing: border-box;
@@ -2259,7 +2259,7 @@ body > [data-popper-placement] {
     border-radius: $height;
     min-width: $height - 2 * $h-padding; // to ensure that it is never narrower than a circle
     line-height: $height + 1px; // to visually center the numbers
-    background-color: $ui-button-background-color;
+    background-color: var(--accent);
     color: $white;
     border-width: 1px;
     border-style: solid;
@@ -8238,6 +8238,7 @@ noscript {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    padding: 6px 0px;
 
     .account-role {
       line-height: unset;
@@ -8260,6 +8261,7 @@ noscript {
       gap: 8px;
       padding-top: 55px;
       overflow: hidden;
+      border-color: var(--lightgray) !important;
 
       .button {
         flex-shrink: 1;
