@@ -67,6 +67,12 @@ function getDominantColor(imageSrc, callback) {
   };
 }
 
+// Function to check if the current URL matches the pattern {domain}/@{username}
+const isAccountPage = () => {
+	const regex = /^\/@[^\/]+$/; // Matches {domain}/@{username}
+	return regex.test(window.location.pathname);
+};
+
 ready(() => {
     // Running all VISoc code after the page is ready
 
@@ -119,9 +125,7 @@ ready(() => {
     };
 
 	// Handle internal navigation, otherwise checkAccountRole won't run more than once
-	const handleUrlChange = () => {
-        checkAccountRole(0);
-    };
+	const handleUrlChange = () => {if (isAccountPage()) {checkAccountRole(0);}};
 
     // Listen for popstate events (back/forward navigation)
     window.addEventListener('popstate', handleUrlChange);
@@ -136,5 +140,5 @@ ready(() => {
         handleUrlChange();
     };
 
-	checkAccountRole(0);
+	if (isAccountPage()) {checkAccountRole(0);}
 });
