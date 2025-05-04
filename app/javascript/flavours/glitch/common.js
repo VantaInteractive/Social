@@ -81,8 +81,8 @@ ready(() => {
             document.documentElement.style.setProperty('--accent', accountAccentColorHex);
             const rgbaColor = rgbToRgba(accountAccentColor, 0.15);
             document.documentElement.style.setProperty('--account-accent', rgbaColor);
-        } else if (attempt < 4) { // Retry up to 4 times (0, 500, 1000, 1500, 2000)
-            const delay = attempt * 500; // 0, 500, 1000, 1500, 2000
+        } else if (attempt < 8) { // Retry up to 8 times
+            const delay = attempt * 500; // 0, 500, 1000, 1500, 2000, ...
             setTimeout(() => checkAccountRole(attempt + 1), delay);
         } else {
             console.log("No data-account-role-id found after multiple attempts. Extracting dominant color from profile picture.");
@@ -99,7 +99,7 @@ ready(() => {
                     document.documentElement.style.setProperty('--accent', dominantColorHex);
                     const rgbaColor = rgbToRgba(dominantColor, 0.15);
                     document.documentElement.style.setProperty('--account-accent', rgbaColor);
-                } else if (attempt < 4) {
+                } else if (attempt < 8) {
                     console.log("Failed to extract dominant color. Retrying...");
                     const delay = attempt * 500;
                     setTimeout(() => checkProfilePicture(attempt + 1), delay);
@@ -107,15 +107,33 @@ ready(() => {
                     console.log("Failed to extract dominant color from the profile picture after multiple attempts.");
                 }
             });
-        } else if (attempt < 4) {
+        } else if (attempt < 8) {
             console.log("No profile picture found. Retrying...");
             const delay = attempt * 500;
             setTimeout(() => checkProfilePicture(attempt + 1), delay);
         } else {
             console.log("No profile picture found after multiple attempts.");
 			document.documentElement.style.setProperty('--accent', '#f8ff9c');
-			document.documentElement.style.setProperty('--account-accent', '#f8ff9c');
+			document.documentElement.style.setProperty('--account-accent', '#242424');
         }
+    };
+
+	// Handle internal navigation, otherwise checkAccountRole won't run more than once
+	const handleUrlChange = () => {
+        checkAccountRole(0);
+    };
+
+    // Listen for popstate events (back/forward navigation)
+    window.addEventListener('popstate', handleUrlChange);
+    const originalPushState = history.pushState;
+    const originalReplaceState = history.replaceState;
+    history.pushState = function(...args) {
+        originalPushState.apply(this, args);
+        handleUrlChange();
+    };
+    history.replaceState = function(...args) {
+        originalReplaceState.apply(this, args);
+        handleUrlChange();
     };
 
 	checkAccountRole(0);
