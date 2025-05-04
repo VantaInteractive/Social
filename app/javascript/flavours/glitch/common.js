@@ -24,15 +24,17 @@ ready(() => {
   // Running all VISoc code after the page is ready
 
   // Set account page accent color based on presence of a colored role or profile picture
-  const accountRole = document.querySelector('.account-role[data-account-role-id]');
-    
-    if (accountRole) {
-        console.log("Applying custom accent color based on role color");
-        const computedStyle = getComputedStyle(accountRole);
-        const accountAccentColor = computedStyle.color;
-        const accountAccentColorHex = rgbToHex(accountAccentColor);
-        document.documentElement.style.setProperty('--accent', accountAccentColorHex);
-    } else {
-        console.log("No data-account-role-id found. Will implement accent color extraction soon.");
-    }
+  setTimeout(() => {
+      const accountRole = document.querySelector('.account-role[data-account-role-id]');
+      
+      if (accountRole) {
+          console.log("Applying custom accent color based on role color");
+          const computedStyle = getComputedStyle(accountRole);
+          const accountAccentColor = computedStyle.color;
+          const accountAccentColorHex = rgbToHex(accountAccentColor);
+          document.documentElement.style.setProperty('--accent', accountAccentColorHex);
+      } else {
+          console.log("No data-account-role-id found. Will implement accent color extraction soon.");
+      }
+  }, 2000);
 });
