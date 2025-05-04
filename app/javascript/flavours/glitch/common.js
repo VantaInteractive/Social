@@ -73,87 +73,66 @@ const isAccountPage = () => {
 	return regex.test(window.location.pathname);
 };
 
-const setDefaultColors = () => {
-	document.documentElement.style.setProperty('--accent', '#f8ff9c');
-	document.documentElement.style.setProperty('--account-accent', '#242424');
-};
-
 ready(() => {
     // Running all VISoc code after the page is ready
 
     // Set account page accent color based on presence of a colored role or profile picture
-    const checkAccountRole = (attempt, callback) => {
+    const checkAccountRole = (attempt) => {
         const accountRole = document.querySelector('.account-role[data-account-role-id]');
         if (accountRole) {
             console.log("Applying custom accent color based on role color");
             const computedStyle = getComputedStyle(accountRole);
             const accountAccentColor = computedStyle.color;
             const accountAccentColorHex = rgbToHex(accountAccentColor);
-            callback(accountAccentColorHex, rgbToRgba(accountAccentColor, 0.15));
-        } else if (attempt < 51) { // Number of retries
-            const delay = attempt * 50; // Delay in ms
-            setTimeout(() => checkAccountRole(attempt + 1, callback), delay);
+            document.documentElement.style.setProperty('--accent', accountAccentColorHex);
+            const rgbaColor = rgbToRgba(accountAccentColor, 0.15);
+            document.documentElement.style.setProperty('--account-accent', rgbaColor);
+        } else if (attempt < 21) { // Number of retries
+            const delay = attempt * 100; // Delay in ms
+            setTimeout(() => checkAccountRole(attempt + 1), delay);
         } else {
-            callback(null, null);
+            console.log("No data-account-role-id found after multiple attempts. Extracting dominant color from profile picture.");
+            checkProfilePicture(0);
         }
     };
 
-    const checkProfilePicture = (attempt, callback) => {
+    const checkProfilePicture = (attempt) => {
         const avatarImg = document.querySelector('.account__header__tabs .avatar .account__avatar img');
         if (avatarImg) {
             getDominantColor(avatarImg.src, (dominantColor) => {
                 if (dominantColor) {
                     const dominantColorHex = rgbToHex(dominantColor);
-                    callback(dominantColorHex, rgbToRgba(dominantColor, 0.15));
-                } else if (attempt < 51) {
+                    document.documentElement.style.setProperty('--accent', dominantColorHex);
+                    const rgbaColor = rgbToRgba(dominantColor, 0.15);
+                    document.documentElement.style.setProperty('--account-accent', rgbaColor);
+                } else if (attempt < 21) {
                     console.log("Failed to extract dominant color. Retrying...");
-                    const delay = attempt * 50;
-                    setTimeout(() => checkProfilePicture(attempt + 1, callback), delay);
+                    const delay = attempt * 100;
+                    setTimeout(() => checkProfilePicture(attempt + 1), delay);
                 } else {
-                    callback(null, null); // No profile picture found
+                    console.log("Failed to extract dominant color from the profile picture after multiple attempts.");
                 }
             });
-        } else if (attempt < 51) {
+        } else if (attempt < 21) {
             console.log("No profile picture found. Retrying...");
-            const delay = attempt * 50;
-            setTimeout(() => checkProfilePicture(attempt + 1, callback), delay);
+            const delay = attempt * 100;
+            setTimeout(() => checkProfilePicture(attempt + 1), delay);
         } else {
-            callback(null, null);
+            console.log("No profile picture found after multiple attempts.");
+			document.documentElement.style.setProperty('--accent', '#f8ff9c');
+			document.documentElement.style.setProperty('--account-accent', '#242424');
         }
     };
 
 	// Handle internal navigation, otherwise checkAccountRole won't run more than once
 	const handleUrlChange = () => {
-        if (isAccountPage()) {
-            let roleColorHex = null;
-            let roleColorRgba = null;
-            let profileColorHex = null;
-            let profileColorRgba = null;
-
-            // Run both checks in parallel
-            checkAccountRole(0, (roleHex, roleRgba) => {
-				if (roleHex) {roleColorHex = roleHex; roleColorRgba = roleRgba;}
-			});
-            checkProfilePicture(0, (profileHex, profileRgba) => {
-				if (profileHex) {profileColorHex = profileHex; profileColorRgba = profileRgba;}
-			});
-
-            // Set a timer to check after a certain delay
-            setTimeout(() => {
-                if (roleColorHex) {
-                    document.documentElement.style.setProperty('--accent', roleColorHex);
-                    document.documentElement.style.setProperty('--account-accent', roleColorRgba);
-                } else if (profileColorHex) {
-                    document.documentElement.style.setProperty('--accent', profileColorHex);
-                    document.documentElement.style.setProperty('--account-accent', profileColorRgba);
-                } else {
-                    setDefaultColors();
-                }
-            }, 2000);
-        } else {
-            setDefaultColors();
-        }
-    };
+		if (isAccountPage()) {
+			checkAccountRole(0);
+		} else {
+			document.documentElement.style.setProperty('--accent', '#f8ff9c');
+			document.documentElement.style.setProperty('--account-accent', '#242424');
+		}
+	};
 
     // Listen for popstate events (back/forward navigation)
     window.addEventListener('popstate', handleUrlChange);
@@ -174,24 +153,4 @@ ready(() => {
 		document.documentElement.style.setProperty('--accent', '#f8ff9c');
 		document.documentElement.style.setProperty('--account-accent', '#242424');
 	}
-
-	if (isAccountPage()) {
-        checkAccountRole(0, (roleHex, roleRgba) => {
-            if (roleHex) {
-                document.documentElement.style.setProperty('--accent', roleHex);
-                document.documentElement.style.setProperty('--account-accent', roleRgba);
-            } else {
-                checkProfilePicture(0, (profileHex, profileRgba) => {
-                    if (profileHex) {
-                        document.documentElement.style.setProperty('--accent', profileHex);
-                        document.documentElement.style.setProperty('--account-accent', profileRgba);
-                    } else {
-                        setDefaultColors();
-                    }
-                });
-            }
-        });
-    } else {
-        setDefaultColors();
-    }
 });
