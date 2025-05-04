@@ -1,7 +1,7 @@
-pack_directory: app/javascript/flavours/glitch/entrypoints
+pack_directory: app/javascript/flavours/vantasocial/entrypoints
 signed_in_preload:
-  - flavours/glitch/async/compose.js
-  - flavours/glitch/async/home_timeline.js
-  - flavours/glitch/async/notifications.js
-locales: ../glitch/locales
+  - flavours/vantasocial/async/compose.js
+  - flavours/vantasocial/async/home_timeline.js
+  - flavours/vantasocial/async/notifications.js
+locales: locales
 screenshot: flavours/vantasocial/images/vantasocial-preview.png
