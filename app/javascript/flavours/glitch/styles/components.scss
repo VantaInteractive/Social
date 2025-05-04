@@ -8178,7 +8178,8 @@ noscript {
 }
 
 .account__header {
-  overflow: hidden;
+  overflow: hidden !important;
+  background: var(--account-accent);
   container: account-header / inline-size;
 
   &.inactive {

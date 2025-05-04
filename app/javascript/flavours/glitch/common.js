@@ -84,7 +84,7 @@ ready(() => {
     	    setTimeout(() => checkAccountRole(attempt + 1), delay);
     	} else {
           	console.log("No data-account-role-id found after multiple attempts. Extracting dominant color from profile picture.");
-    		const avatarImg = document.querySelector('.account__avatar img');
+    		const avatarImg = document.querySelector('.account__header__tabs .avatar .account__avatar img');
         	if (avatarImg) {
         		getDominantColor(avatarImg.src, (dominantColor) => {
                 	if (dominantColor) {
