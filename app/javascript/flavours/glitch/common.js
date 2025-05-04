@@ -42,16 +42,18 @@ function getDominantColor(imageSrc, callback) {
 		    let dominantColor = '';
 		    let maxCount = 0;
 		    for (let i = 0; i < data.length; i += 4) {
-		        const r = data[i];
-		        const g = data[i + 1];
-		        const b = data[i + 2];
-		        const rgb = `${r},${g},${b}`;
-		        colorCount[rgb] = (colorCount[rgb] || 0) + 1;
-		        if (colorCount[rgb] > maxCount) {
-		            maxCount = colorCount[rgb];
-		            dominantColor = rgb;
-		        }
-		    }
+				const r = data[i];
+				const g = data[i + 1];
+				const b = data[i + 2];
+				const a = data[i + 3];
+				if (a === 0) continue; // Skip transparent pixels
+				const rgb = `${r},${g},${b}`;
+				colorCount[rgb] = (colorCount[rgb] || 0) + 1;
+				if (colorCount[rgb] > maxCount) {
+					maxCount = colorCount[rgb];
+					dominantColor = rgb;
+				}
+			}
 		    callback(`rgb(${dominantColor})`);
 		} catch (error) {
           	console.error("Error accessing image data from canvas:", error);
@@ -66,41 +68,55 @@ function getDominantColor(imageSrc, callback) {
 }
 
 ready(() => {
-  	// Running all VISoc code after the page is ready
+    // Running all VISoc code after the page is ready
 
-  	// Set account page accent color based on presence of a colored role or profile picture
-  	const checkAccountRole = (attempt) => {
-	const accountRole = document.querySelector('.account-role[data-account-role-id]');
-		if (accountRole) {
-          	console.log("Applying custom accent color based on role color");
-          	const computedStyle = getComputedStyle(accountRole);
-          	const accountAccentColor = computedStyle.color;
-          	const accountAccentColorHex = rgbToHex(accountAccentColor);
-          	document.documentElement.style.setProperty('--accent', accountAccentColorHex);
-			const rgbaColor = rgbToRgba(accountAccentColor, 0.15);
-		  	document.documentElement.style.setProperty('--account-accent', rgbaColor);
-    	} else if (attempt < 4) { // Retry up to 4 times (0, 500, 1000, 1500, 2000)
-    	    const delay = attempt * 500; // 0, 500, 1000, 1500, 2000
-    	    setTimeout(() => checkAccountRole(attempt + 1), delay);
-    	} else {
-          	console.log("No data-account-role-id found after multiple attempts. Extracting dominant color from profile picture.");
-    		const avatarImg = document.querySelector('.account__header__tabs .avatar .account__avatar img');
-        	if (avatarImg) {
-        		getDominantColor(avatarImg.src, (dominantColor) => {
-                	if (dominantColor) {
-                		const dominantColorHex = rgbToHex(dominantColor);
-                      	document.documentElement.style.setProperty('--accent', dominantColorHex);
-					  	const rgbaColor = rgbToRgba(dominantColor, 0.15);
-                    	document.documentElement.style.setProperty('--account-accent', rgbaColor);
-                  	} else {
-                    	console.log("Failed to extract dominant color from the profile picture.");
-                  	}
-            	});
-          	} else {
-          	    console.log("No profile picture found.");
-          	}
-      	}
-  };
+    // Set account page accent color based on presence of a colored role or profile picture
+    const checkAccountRole = (attempt) => {
+        const accountRole = document.querySelector('.account-role[data-account-role-id]');
+        if (accountRole) {
+            console.log("Applying custom accent color based on role color");
+            const computedStyle = getComputedStyle(accountRole);
+            const accountAccentColor = computedStyle.color;
+            const accountAccentColorHex = rgbToHex(accountAccentColor);
+            document.documentElement.style.setProperty('--accent', accountAccentColorHex);
+            const rgbaColor = rgbToRgba(accountAccentColor, 0.15);
+            document.documentElement.style.setProperty('--account-accent', rgbaColor);
+        } else if (attempt < 4) { // Retry up to 4 times (0, 500, 1000, 1500, 2000)
+            const delay = attempt * 500; // 0, 500, 1000, 1500, 2000
+            setTimeout(() => checkAccountRole(attempt + 1), delay);
+        } else {
+            console.log("No data-account-role-id found after multiple attempts. Extracting dominant color from profile picture.");
+            checkProfilePicture(0);
+        }
+    };
 
-  checkAccountRole(0);
+    const checkProfilePicture = (attempt) => {
+        const avatarImg = document.querySelector('.account__header__tabs .avatar .account__avatar img');
+        if (avatarImg) {
+            getDominantColor(avatarImg.src, (dominantColor) => {
+                if (dominantColor) {
+                    const dominantColorHex = rgbToHex(dominantColor);
+                    document.documentElement.style.setProperty('--accent', dominantColorHex);
+                    const rgbaColor = rgbToRgba(dominantColor, 0.15);
+                    document.documentElement.style.setProperty('--account-accent', rgbaColor);
+                } else if (attempt < 4) {
+                    console.log("Failed to extract dominant color. Retrying...");
+                    const delay = attempt * 500;
+                    setTimeout(() => checkProfilePicture(attempt + 1), delay);
+                } else {
+                    console.log("Failed to extract dominant color from the profile picture after multiple attempts.");
+                }
+            });
+        } else if (attempt < 4) {
+            console.log("No profile picture found. Retrying...");
+            const delay = attempt * 500;
+            setTimeout(() => checkProfilePicture(attempt + 1), delay);
+        } else {
+            console.log("No profile picture found after multiple attempts.");
+			document.documentElement.style.setProperty('--accent', '#f8ff9c');
+			document.documentElement.style.setProperty('--account-accent', '#f8ff9c');
+        }
+    };
+
+	checkAccountRole(0);
 });
